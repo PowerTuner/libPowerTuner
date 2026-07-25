@@ -85,7 +85,6 @@ namespace PWTS {
             ddata.applyOnWakeFromSleep <<
             ddata.ignoreBatteryEvent <<
             ddata.logLvl <<
-            ddata.maxLogFiles <<
             ddata.address <<
             ddata.tcpPort <<
             ddata.udpPort;
@@ -105,7 +104,6 @@ namespace PWTS {
             ddata.applyOnWakeFromSleep >>
             ddata.ignoreBatteryEvent >>
             ddata.logLvl >>
-            ddata.maxLogFiles >>
             ddata.address >>
             ddata.tcpPort >>
             ddata.udpPort;

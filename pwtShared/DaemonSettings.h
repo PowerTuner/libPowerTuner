@@ -40,7 +40,6 @@ namespace PWTS {
             bool applyOnWakeFromSleep = false;
             bool ignoreBatteryEvent = false;
             LogLevel logLvl = LogLevel::Info;
-            int maxLogFiles = 5;
             quint16 tcpPort = DefaultTCPPort;
             quint16 udpPort = DefaultUDPPort;
         };
@@ -66,14 +65,12 @@ namespace PWTS {
         [[nodiscard]] bool getApplyOnWakeFromSleep() const { return _data.applyOnWakeFromSleep; }
         [[nodiscard]] bool getIgnoreBatteryEvent() const { return _data.ignoreBatteryEvent; }
         [[nodiscard]] LogLevel getLogLevel() const { return _data.logLvl; }
-        [[nodiscard]] int getMaxLogFiles() const { return _data.maxLogFiles; }
         void setOnStartProfile(const QString &profile) { _data.startProfile = profile; }
         void setOnBatteryProfile(const QString &profile) { _data.batteryProfile = profile; }
         void setOnPowerSupplyProfile(const QString &profile) { _data.powerSupplyProfile = profile; }
         void setApplyOnWakeFromSleep(const bool enable) { _data.applyOnWakeFromSleep = enable; }
         void setIgnoreBatteryEvent(const bool enable) { _data.ignoreBatteryEvent = enable; }
         void setLogLevel(const LogLevel lvl) { _data.logLvl = lvl; }
-        void setMaxLogFiles(const int max) { _data.maxLogFiles = max; }
 
         void setApplyInterval(int interval);
         void setAddress(const QString &adr);
