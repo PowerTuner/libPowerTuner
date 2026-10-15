@@ -20,17 +20,8 @@
 #include <QJsonArray>
 
 #include "Utils.h"
-#include "../version.h"
 
 namespace PWTS {
-    int getLibMajorVersion() {
-        return LIB_VER_MAJOR;
-    }
-
-    int getLibMinorVersion() {
-        return LIB_VER_MINOR;
-    }
-
     bool isValidPort(const quint16 port) {
         return (port > 1000 && port < UINT16_MAX);
     }
