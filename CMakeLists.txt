@@ -11,7 +11,7 @@ set(OS_SRC "")
 find_package(Qt6 6 REQUIRED COMPONENTS Core Network)
 
 if (WIN32)
-	configure_file(src/resources/cmake/windows/win.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/win.rc)
+	configure_file(resources/cmake/windows/win.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/win.rc)
 
 	list(APPEND OS_SRC
 		win.rc
