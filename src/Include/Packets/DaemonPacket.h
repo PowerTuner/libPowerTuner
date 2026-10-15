@@ -34,7 +34,7 @@
 #include "../Data/FAN/FanData.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] DaemonPacket final {
+    struct LIBPWT_EXPORT [[nodiscard]] DaemonPacket final {
         static constexpr int version = 2;
         PacketError error = PacketError::NoError;
         bool hasProfileData = false;

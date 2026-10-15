@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] CPPCCapability1 final {
+    struct LIBPWT_EXPORT [[nodiscard]] CPPCCapability1 final {
         int lowestPerf;
         int lowNonLinPerf;
         int nominalPerf;

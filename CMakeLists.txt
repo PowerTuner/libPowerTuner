@@ -19,7 +19,7 @@ if (WIN32)
 endif ()
 
 add_library(${PROJECT_NAME} SHARED
-    src/sharedExport.h
+    src/lib_export.h
     src/DaemonSettings.h
     src/DaemonSettings.cpp
     src/Utils.h

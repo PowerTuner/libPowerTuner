@@ -23,7 +23,7 @@
 #include "../../../OS/Linux/AMD/GPUDPMForcePerfLevel.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] LinuxAMDGPUData final {
+    struct LIBPWT_EXPORT [[nodiscard]] LinuxAMDGPUData final {
         ROData<AMD::GPUODRanges> odRanges;
         RWData<AMD::GPUDPMForcePerfLevel> dpmForcePerfLevel;
         RWData<QString> powerDpmState;

@@ -20,10 +20,10 @@
 #include <QList>
 #include <QDataStream>
 
-#include "../../../../sharedExport.h"
+#include "../../../../lib_export.h"
 
 namespace PWTS::LNX::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] AMDPStateData final {//todo partial
+    struct LIBPWT_EXPORT [[nodiscard]] AMDPStateData final {//todo partial
         QList<QString> eppAvailablePrefs;
         //int highestPerf;
         //int lowestNonLinearPerf;

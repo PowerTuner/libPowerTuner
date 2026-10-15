@@ -20,11 +20,11 @@
 #include <QString>
 #include <QDataStream>
 
-#include "../../sharedExport.h"
+#include "../../lib_export.h"
 #include "CPUVendor.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] CpuInfo final {
+    struct LIBPWT_EXPORT [[nodiscard]] CpuInfo final {
         QString brand;
         QString codename;
         QString techNode;

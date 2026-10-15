@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] HWPCapabilities final {
+    struct LIBPWT_EXPORT [[nodiscard]] HWPCapabilities final {
         int lowestPerf;
         int highestPerf;
 

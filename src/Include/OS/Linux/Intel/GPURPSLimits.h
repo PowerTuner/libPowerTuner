@@ -17,10 +17,10 @@
  */
 #pragma once
 
-#include "../../../../sharedExport.h"
+#include "../../../../lib_export.h"
 
 namespace PWTS::LNX::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] GPURPSLimits final {
+    struct LIBPWT_EXPORT [[nodiscard]] GPURPSLimits final {
         int rp0;
         int rpn;
 

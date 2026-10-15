@@ -22,7 +22,7 @@
 #include "../../../Types/RWData.h"
 
 namespace PWTS::LNX::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] LinuxAMDThreadData final {
+    struct LIBPWT_EXPORT [[nodiscard]] LinuxAMDThreadData final {
         ROData<AMDPStateData> pstateData;
         RWData<QString> epp;
 

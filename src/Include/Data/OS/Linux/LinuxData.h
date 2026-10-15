@@ -26,7 +26,7 @@
 #include "../../../OS/Linux/MiscPMDevice.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] LinuxData final {
+    struct LIBPWT_EXPORT [[nodiscard]] LinuxData final {
         RWData<QString> smtState;
         ROData<QList<QString>> cpuIdleAvailableGovernors;
         RWData<QString> cpuIdleGovernor;

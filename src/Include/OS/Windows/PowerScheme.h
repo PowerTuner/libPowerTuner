@@ -22,7 +22,7 @@
 #include "PowerSchemeSetting.h"
 
 namespace PWTS::WIN {
-	struct PWTSHARED_EXPORT [[nodiscard]] PowerScheme final {
+	struct LIBPWT_EXPORT [[nodiscard]] PowerScheme final {
 		QMap<QString, PowerSchemeSetting> settings;
 		QString friendlyName;
 		bool deleteFlag = false;

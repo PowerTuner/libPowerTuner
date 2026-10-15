@@ -16,11 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
 #include <QtCompilerDetection>
 
-#if defined(PWTSHARED_LIBRARY)
-#define PWTSHARED_EXPORT Q_DECL_EXPORT
+#ifdef PWT_LIBRARY
+#define LIBPWT_EXPORT Q_DECL_EXPORT
 #else
-#define PWTSHARED_EXPORT Q_DECL_IMPORT
+#define LIBPWT_EXPORT Q_DECL_IMPORT
 #endif

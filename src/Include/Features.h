@@ -21,12 +21,12 @@
 #include <QMap>
 #include <QDataStream>
 
-#include "../sharedExport.h"
+#include "../lib_export.h"
 #include "GPU/GPUVendor.h"
 #include "Feature.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] Features final {
+    struct LIBPWT_EXPORT [[nodiscard]] Features final {
         QSet<Feature> cpu;
         QMap<int, std::pair<GPUVendor, QSet<Feature>>> gpus;
         QMap<QString, QSet<Feature>> fans;

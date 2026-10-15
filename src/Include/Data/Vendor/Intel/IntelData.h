@@ -34,7 +34,7 @@
 #include "../../../CPU/Intel/MCHBARPkgRaplLimit.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] IntelData final {
+    struct LIBPWT_EXPORT [[nodiscard]] IntelData final {
         // package level
         RWData<PkgPowerLimit> pkgPowerLimit;
         RWData<VRCurrentConfig> vrCurrentCfg;

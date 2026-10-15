@@ -31,7 +31,7 @@
 #include "../CPU/CPUVendor.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] ClientPacket final {
+    struct LIBPWT_EXPORT [[nodiscard]] ClientPacket final {
         static constexpr int version = 1;
         PacketError error = PacketError::NoError;
         OSType os;

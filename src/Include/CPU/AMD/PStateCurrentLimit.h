@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] PStateCurrentLimit final {
+    struct LIBPWT_EXPORT [[nodiscard]] PStateCurrentLimit final {
         int curPStateLimit;
         int pstateMaxValue;
 

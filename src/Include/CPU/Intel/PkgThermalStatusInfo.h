@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] PkgThermalStatusInfo final {
+    struct LIBPWT_EXPORT [[nodiscard]] PkgThermalStatusInfo final {
         int digitalReadout;
 
         friend QDataStream &operator<<(QDataStream &ds, const PkgThermalStatusInfo &data) {

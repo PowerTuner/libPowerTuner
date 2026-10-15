@@ -20,7 +20,7 @@
 #include "PowerSettingValue.h"
 
 namespace PWTS::WIN {
-    struct PWTSHARED_EXPORT [[nodiscard]] PowerSchemeSetting final {
+    struct LIBPWT_EXPORT [[nodiscard]] PowerSchemeSetting final {
         QString groupGuid;
         PowerSettingValue value;
 

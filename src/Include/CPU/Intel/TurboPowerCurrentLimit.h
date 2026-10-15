@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] TurboPowerCurrentLimit final {
+    struct LIBPWT_EXPORT [[nodiscard]] TurboPowerCurrentLimit final {
         int tdpLimit;
         bool tdpLimitOverride;
         int tdcLimit;

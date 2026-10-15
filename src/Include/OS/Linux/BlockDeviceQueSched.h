@@ -20,10 +20,10 @@
 #include <QDataStream>
 #include <QList>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] BlockDeviceQueSched final {
+    struct LIBPWT_EXPORT [[nodiscard]] BlockDeviceQueSched final {
         QString name;
         QList<QString> availableQueueSchedulers;
         QString scheduler;

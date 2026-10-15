@@ -25,16 +25,16 @@
 #include "Include/Packets/DeviceInfoPacket.h"
 
 namespace PWTS {
-    [[nodiscard]] PWTSHARED_EXPORT bool isValidPort(quint16 port);
-    [[nodiscard]] PWTSHARED_EXPORT QByteArray loadFile(const QString &path);
-    [[nodiscard]] PWTSHARED_EXPORT bool writeFile(const QString &path, const QByteArray &data);
-    [[nodiscard]] PWTSHARED_EXPORT bool isValidProfileForImport(const QString &profile);
-    [[nodiscard]] PWTSHARED_EXPORT QString getErrorStr(DError e);
-    [[nodiscard]] PWTSHARED_EXPORT QString getPacketErrorStr(PacketError e);
-    [[nodiscard]] PWTSHARED_EXPORT QHostAddress getHostAddress(const QString &adr);
-    [[nodiscard]] PWTSHARED_EXPORT QString featureToString(Feature feat);
-    [[nodiscard]] PWTSHARED_EXPORT QString GPUVendorToString(GPUVendor vnd);
-    [[nodiscard]] PWTSHARED_EXPORT QJsonObject getDeviceInfoJson(const DeviceInfoPacket &packet);
+    [[nodiscard]] LIBPWT_EXPORT bool isValidPort(quint16 port);
+    [[nodiscard]] LIBPWT_EXPORT QByteArray loadFile(const QString &path);
+    [[nodiscard]] LIBPWT_EXPORT bool writeFile(const QString &path, const QByteArray &data);
+    [[nodiscard]] LIBPWT_EXPORT bool isValidProfileForImport(const QString &profile);
+    [[nodiscard]] LIBPWT_EXPORT QString getErrorStr(DError e);
+    [[nodiscard]] LIBPWT_EXPORT QString getPacketErrorStr(PacketError e);
+    [[nodiscard]] LIBPWT_EXPORT QHostAddress getHostAddress(const QString &adr);
+    [[nodiscard]] LIBPWT_EXPORT QString featureToString(Feature feat);
+    [[nodiscard]] LIBPWT_EXPORT QString GPUVendorToString(GPUVendor vnd);
+    [[nodiscard]] LIBPWT_EXPORT QJsonObject getDeviceInfoJson(const DeviceInfoPacket &packet);
 
     template<class T>
     [[nodiscard]]

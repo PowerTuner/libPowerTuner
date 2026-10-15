@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] MiscPwrMgmt final {
+    struct LIBPWT_EXPORT [[nodiscard]] MiscPwrMgmt final {
         bool eistHWCoordinationDisable;
 
         friend QDataStream &operator<<(QDataStream &ds, const MiscPwrMgmt &data) {

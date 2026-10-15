@@ -20,11 +20,11 @@
 #include <QString>
 #include <QDataStream>
 
-#include "../../sharedExport.h"
+#include "../../lib_export.h"
 #include "GPUVendor.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] GpuInfo final {
+    struct LIBPWT_EXPORT [[nodiscard]] GpuInfo final {
         QString deviceID;
         QString revisionID;
         QString vbiosVersion;

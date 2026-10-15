@@ -20,7 +20,7 @@
 #include "HWPRequestPkg.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] HWPRequest final {
+    struct LIBPWT_EXPORT [[nodiscard]] HWPRequest final {
         HWPRequestPkg requestPkg;
         bool packageControl;
         bool acwValid;

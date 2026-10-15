@@ -21,7 +21,7 @@
 #include "../../../OS/Windows/PowerScheme.h"
 
 namespace PWTS::WIN {
-    struct PWTSHARED_EXPORT [[nodiscard]] WindowsData final {
+    struct LIBPWT_EXPORT [[nodiscard]] WindowsData final {
         QMap<QString, PowerSchemeSettingData> schemeOptionsData;
         QMap<QString, PowerScheme> schemes;
         bool resetSchemesDefault = false;

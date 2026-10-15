@@ -24,7 +24,7 @@
 #include "../../../CPU/AMD/PStateCurrentLimit.h"
 
 namespace PWTS::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] AMDData final {
+    struct LIBPWT_EXPORT [[nodiscard]] AMDData final {
         // package level
         ROData<PStateCurrentLimit> pstateCurrentLimit;
         RWData<int> stapmLimit;

@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] PkgCstConfigControl final {
+    struct LIBPWT_EXPORT [[nodiscard]] PkgCstConfigControl final {
         short packageCStateLimit;
         short maxCoreCState;
         bool ioMwaitRedirectionEnable;

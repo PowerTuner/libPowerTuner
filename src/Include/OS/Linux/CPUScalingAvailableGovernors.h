@@ -20,10 +20,10 @@
 #include <QList>
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] CPUScalingAvailableGovernors final {
+    struct LIBPWT_EXPORT [[nodiscard]] CPUScalingAvailableGovernors final {
         QList<QString> availableGovernors;
         QList<QString> relatedCPUs;
 

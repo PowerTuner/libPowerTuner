@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::WIN {
-	struct PWTSHARED_EXPORT [[nodiscard]] PowerSettingValue final {
+	struct LIBPWT_EXPORT [[nodiscard]] PowerSettingValue final {
 		int ac = -1;
 		int dc = -1;
 

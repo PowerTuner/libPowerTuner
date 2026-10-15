@@ -23,7 +23,7 @@
 #include "../../../CPU/Intel/HWPRequest.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] IntelThreadData final {
+    struct LIBPWT_EXPORT [[nodiscard]] IntelThreadData final {
         ROData<HWPCapabilities> hwpCapapabilities;
         RWData<HWPRequest> hwpRequest;
 

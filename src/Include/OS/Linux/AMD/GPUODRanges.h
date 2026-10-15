@@ -20,7 +20,7 @@
 #include "../../../Types/MinMax.h"
 
 namespace PWTS::LNX::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] GPUODRanges final { // parsed data from pp_od_clk_voltage
+    struct LIBPWT_EXPORT [[nodiscard]] GPUODRanges final { // parsed data from pp_od_clk_voltage
         MinMax sclk;
 
         friend QDataStream &operator<<(QDataStream &ds, const GPUODRanges &data) {

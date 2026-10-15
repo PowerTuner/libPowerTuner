@@ -20,7 +20,7 @@
 #include "../../../Types/RWData.h"
 
 namespace PWTS::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] AMDCoreData final {
+    struct LIBPWT_EXPORT [[nodiscard]] AMDCoreData final {
         RWData<int> curveOptimizer;
 
         friend QDataStream &operator<<(QDataStream &ds, const AMDCoreData &data) {

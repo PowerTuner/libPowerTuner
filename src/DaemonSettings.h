@@ -19,11 +19,11 @@
 
 #include <QHostAddress>
 
-#include "sharedExport.h"
+#include "lib_export.h"
 #include "Include/LogLevel.h"
 
 namespace PWTS {
-    class PWTSHARED_EXPORT DaemonSettings final {
+    class LIBPWT_EXPORT DaemonSettings final {
     public:
         static constexpr quint16 DefaultTCPPort = 56000;
         static constexpr quint16 DefaultUDPPort = 56001;

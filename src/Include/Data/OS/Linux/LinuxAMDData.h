@@ -20,7 +20,7 @@
 #include "LinuxAMDThreadData.h"
 
 namespace PWTS::LNX::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] LinuxAMDData final {
+    struct LIBPWT_EXPORT [[nodiscard]] LinuxAMDData final {
         // package level
         RWData<QString> pstateStatus;
 

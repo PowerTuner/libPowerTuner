@@ -21,10 +21,10 @@
 #include <QDataStream>
 #include <QList>
 
-#include "../sharedExport.h"
+#include "../lib_export.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] DynamicSystemInfo final {
+    struct LIBPWT_EXPORT [[nodiscard]] DynamicSystemInfo final {
         QString swapMemory;
         QList<QString> cpuMicrocode;
         int onlineCPUCount;

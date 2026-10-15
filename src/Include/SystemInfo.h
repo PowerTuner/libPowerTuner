@@ -20,11 +20,11 @@
 #include <QString>
 #include <QDataStream>
 
-#include "../sharedExport.h"
+#include "../lib_export.h"
 #include "OSType.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] SystemInfo final {
+    struct LIBPWT_EXPORT [[nodiscard]] SystemInfo final {
         OSType osType;
         QString distribution;
         QString kernel;

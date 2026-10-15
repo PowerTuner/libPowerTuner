@@ -22,7 +22,7 @@
 #include "../../Types/MinMax.h"
 
 namespace PWTS::WIN {
-    struct PWTSHARED_EXPORT [[nodiscard]] PowerSchemeSettingData final {
+    struct LIBPWT_EXPORT [[nodiscard]] PowerSchemeSettingData final {
         QString groupTitle;
         QString name;
         QString description;

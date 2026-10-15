@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../sharedExport.h"
+#include "../../lib_export.h"
 
 namespace PWTS {
-	struct PWTSHARED_EXPORT [[nodiscard]] MinMax {
+	struct LIBPWT_EXPORT [[nodiscard]] MinMax {
 		int min;
 		int max;
 

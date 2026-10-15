@@ -23,7 +23,7 @@
 #include "../../../OS/Linux/Intel/GPURPSLimits.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] LinuxIntelGPUData final {
+    struct LIBPWT_EXPORT [[nodiscard]] LinuxIntelGPUData final {
         ROData<Intel::GPURPSLimits> rpsLimits;
         RWData<MinMax> frequency;
         RWData<int> boostFrequency;

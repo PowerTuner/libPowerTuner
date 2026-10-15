@@ -22,7 +22,7 @@
 #include "../../../Types/MinMax.h"
 
 namespace PWTS::LNX::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] GPUDPMForcePerfLevel final {
+    struct LIBPWT_EXPORT [[nodiscard]] GPUDPMForcePerfLevel final {
         QString level;
         MinMax sclk;
         bool reset;

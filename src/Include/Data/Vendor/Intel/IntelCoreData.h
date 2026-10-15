@@ -21,7 +21,7 @@
 #include "../../../CPU/Intel/PkgCstConfigControl.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] IntelCoreData final {
+    struct LIBPWT_EXPORT [[nodiscard]] IntelCoreData final {
         RWData<PkgCstConfigControl> pkgCstConfigControl;
 
         friend QDataStream &operator<<(QDataStream &ds, const IntelCoreData &data) {

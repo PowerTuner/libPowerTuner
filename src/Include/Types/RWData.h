@@ -19,11 +19,11 @@
 
 #include <QDataStream>
 
-#include "../../sharedExport.h"
+#include "../../lib_export.h"
 
 namespace PWTS {
     template<class T>
-    class PWTSHARED_EXPORT [[nodiscard]] RWData final {
+    class LIBPWT_EXPORT [[nodiscard]] RWData final {
     private:
         bool valid = false;
         bool ignored = false;

@@ -22,7 +22,7 @@
 #include "../../Types/RWData.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] FanData final {
+    struct LIBPWT_EXPORT [[nodiscard]] FanData final {
         RWData<int> mode;
         QList<std::pair<int, int>> curve;
 

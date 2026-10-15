@@ -27,7 +27,7 @@
 #include "../Features.h"
 
 namespace PWTS {
-    struct PWTSHARED_EXPORT [[nodiscard]] DeviceInfoPacket final {
+    struct LIBPWT_EXPORT [[nodiscard]] DeviceInfoPacket final {
         static constexpr int version = 1;
         PacketError error = PacketError::NoError;
         int daemonMajorVersion = 0;

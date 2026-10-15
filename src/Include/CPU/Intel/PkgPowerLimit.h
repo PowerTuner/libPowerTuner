@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] PkgPowerLimit final {
+    struct LIBPWT_EXPORT [[nodiscard]] PkgPowerLimit final {
         int pl1;
         int pl2;
         int pl1Time;

@@ -25,7 +25,7 @@
 #include "../../../OS/Linux/CPUFrequencyLimits.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] LinuxThreadData final {
+    struct LIBPWT_EXPORT [[nodiscard]] LinuxThreadData final {
         ROData<CPUScalingAvailableGovernors> scalingAvailableGovernors;
         ROData<CPUFrequencyLimits> cpuFrequencyLimits;
         ROData<bool> cpuLogicalOffAvailable;

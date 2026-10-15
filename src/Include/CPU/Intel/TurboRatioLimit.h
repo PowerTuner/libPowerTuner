@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] TurboRatioLimit final {
+    struct LIBPWT_EXPORT [[nodiscard]] TurboRatioLimit final {
         int maxRatioLimit1C;
         int maxRatioLimit2C;
         int maxRatioLimit3C;

@@ -19,10 +19,10 @@
 
 #include <QDataStream>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::Intel {
-    struct PWTSHARED_EXPORT [[nodiscard]] FIVRControlUV final {
+    struct LIBPWT_EXPORT [[nodiscard]] FIVRControlUV final {
         int cpu;
         int gpu;
         int cpuCache;

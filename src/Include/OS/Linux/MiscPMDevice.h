@@ -20,10 +20,10 @@
 #include <QDataStream>
 #include <QString>
 
-#include "../../../sharedExport.h"
+#include "../../../lib_export.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] MiscPMDevice final {
+    struct LIBPWT_EXPORT [[nodiscard]] MiscPMDevice final {
         QString name;
         QString control;
         QString controlValue;

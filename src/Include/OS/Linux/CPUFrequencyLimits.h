@@ -22,7 +22,7 @@
 #include "../../Types/MinMax.h"
 
 namespace PWTS::LNX {
-    struct PWTSHARED_EXPORT [[nodiscard]] CPUFrequencyLimits final {
+    struct LIBPWT_EXPORT [[nodiscard]] CPUFrequencyLimits final {
         QList<QString> relatedCPUs;
         MinMax limit;
 

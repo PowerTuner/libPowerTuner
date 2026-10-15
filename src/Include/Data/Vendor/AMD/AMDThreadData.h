@@ -23,7 +23,7 @@
 #include "../../../CPU/AMD/CPPCRequest.h"
 
 namespace PWTS::AMD {
-    struct PWTSHARED_EXPORT [[nodiscard]] AMDThreadData final {
+    struct LIBPWT_EXPORT [[nodiscard]] AMDThreadData final {
         ROData<CPPCCapability1> cppcCapability1;
         RWData<CPPCRequest> cppcRequest;
         RWData<int> corePerfBoost;
