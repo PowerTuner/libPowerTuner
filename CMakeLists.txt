@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(src VERSION 2.0 DESCRIPTION "Shared library for PowerTuner clients and daemon" LANGUAGES CXX)
+project(libPowerTuner VERSION 2.0 DESCRIPTION "PowerTuner client and daemon shared library" LANGUAGES CXX)
 
 set(PROJECT_AUTHOR "kylon")
 set(CMAKE_CXX_STANDARD 20)
@@ -133,4 +133,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 	SOVERSION ${PROJECT_VERSION}
 	CXX_VISIBLITY_PRESET hidden
 	VISIBILITY_INLINE_HIDDEN TRUE
+    PREFIX ""
 )
