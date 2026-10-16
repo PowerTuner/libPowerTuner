@@ -35,10 +35,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/DynamicSystemInfo.h
     src/Include/DaemonCMD.h
 
-    src/Include/Types/MinMax.h
-    src/Include/Types/ROData.h
-    src/Include/Types/RWData.h
-
     src/Include/OS/Linux/CPUFrequencyLimits.h
     src/Include/OS/Linux/CPUScalingAvailableGovernors.h
     src/Include/OS/Linux/BlockDeviceQueSched.h
