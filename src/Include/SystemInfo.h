@@ -16,57 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QString>
-#include <QDataStream>
+#include <string>
 
 #include "../lib_export.h"
-#include "OSType.h"
+#include "../enums/OSType.h"
 
-namespace PWTS {
-    struct LIBPWT_EXPORT [[nodiscard]] SystemInfo final {
+namespace LIBPWT {
+    struct LIBPWT_EXPORT SystemInfo final {
         OSType osType;
-        QString distribution;
-        QString kernel;
-        QString arch;
-        QString biosVersion;
-        QString biosVendor;
-        QString biosDate;
-        QString ecVersion;
-        QString product;
-        QString manufacturer;
-        QString availableRam;
-
-        friend QDataStream &operator<<(QDataStream &ds, const SystemInfo &data) {
-            ds << data.osType <<
-                data.distribution <<
-                data.kernel <<
-                data.arch <<
-                data.biosVersion <<
-                data.biosVendor <<
-                data.biosDate <<
-                data.ecVersion <<
-                data.product <<
-                data.manufacturer <<
-                data.availableRam;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, SystemInfo &data) {
-            ds >> data.osType >>
-                data.distribution >>
-                data.kernel >>
-                data.arch >>
-                data.biosVersion >>
-                data.biosVendor >>
-                data.biosDate >>
-                data.ecVersion >>
-                data.product >>
-                data.manufacturer >>
-                data.availableRam;
-
-            return ds;
-        }
+        std::string distribution;
+        std::string kernel;
+        std::string arch;
+        std::string biosVersion;
+        std::string biosVendor;
+        std::string biosDate;
+        std::string ecVersion;
+        std::string product;
+        std::string manufacturer;
+        std::string availableRam;
     };
 }
