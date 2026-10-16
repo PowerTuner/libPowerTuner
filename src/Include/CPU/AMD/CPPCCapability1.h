@@ -16,34 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] CPPCCapability1 final {
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT CPPCCapability1 final {
         int lowestPerf;
         int lowNonLinPerf;
         int nominalPerf;
         int highestPerf;
-
-        friend QDataStream &operator<<(QDataStream &ds, const CPPCCapability1 &data) {
-            ds << data.lowestPerf <<
-                data.lowNonLinPerf <<
-                data.nominalPerf <<
-                data.highestPerf;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, CPPCCapability1 &data) {
-            ds >> data.lowestPerf >>
-                data.lowNonLinPerf >>
-                data.nominalPerf >>
-                data.highestPerf;
-
-            return ds;
-        }
     };
 }

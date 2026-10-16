@@ -16,28 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] PStateCurrentLimit final {
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT PStateCurrentLimit final {
         int curPStateLimit;
         int pstateMaxValue;
-
-        friend QDataStream &operator<<(QDataStream &ds, const PStateCurrentLimit &data) {
-            ds << data.curPStateLimit <<
-                data.pstateMaxValue;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, PStateCurrentLimit &data) {
-            ds >> data.curPStateLimit >>
-                data.pstateMaxValue;
-
-            return ds;
-        }
     };
 }
