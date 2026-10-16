@@ -18,8 +18,8 @@
 #pragma once
 #include <string>
 
-#include "../../lib_export.h"
-#include "../../enums/CPUVendor.h"
+#include "../lib_export.h"
+#include "../enums/CPUVendor.h"
 
 namespace LIBPWT {
     struct LIBPWT_EXPORT CPUInfo final {

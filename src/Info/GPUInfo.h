@@ -16,25 +16,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <string>
 
-namespace PWTS {
-    enum struct DCMD: int {
-        PRINT_ERROR = 0,
-        DAEMON_CMD_FAIL,
-        GET_DEVICE_INFO_PACKET,
-        GET_DAEMON_PACKET,
-        APPLY_CLIENT_SETTINGS,
-        GET_DAEMON_SETTS,
-        APPLY_DAEMON_SETT,
-        GET_PROFILE_LIST,
-        DELETE_PROFILE,
-        WRITE_PROFILE,
-        LOAD_PROFILE,
-        APPLY_PROFILE,
-        EXPORT_PROFILES,
-        IMPORT_PROFILES,
-        BATTERY_STATUS_CHANGED,
-        SYS_WAKE_FROM_SLEEP,
-        APPLY_TIMER
+#include "../lib_export.h"
+#include "../enums/GPUVendor.h"
+
+namespace LIBPWT {
+    struct LIBPWT_EXPORT GPUInfo final {
+        GPUVendor vendor;
+        std::string deviceID;
+        std::string revisionID;
+        std::string biosVersion;
+        int index;
     };
 }

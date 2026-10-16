@@ -20,11 +20,18 @@ endif ()
 
 add_library(${PROJECT_NAME} SHARED
     src/lib_export.h
+
     src/enums/Error.h
     src/enums/OSType.h
     src/enums/CPUVendor.h
+    src/enums/GPUVendor.h
     src/enums/Feature.h
     src/enums/LogLevel.h
+
+    src/Info/SystemInfo.h
+    src/Info/DynamicSystemInfo.h
+    src/Info/CPUInfo.h
+    src/Info/GPUInfo.h
 
     src/DaemonSettings.h
     src/DaemonSettings.cpp
@@ -32,9 +39,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Utils.cpp
 
     src/Include/Features.h
-    src/Include/SystemInfo.h
-    src/Include/DynamicSystemInfo.h
-    src/Include/DaemonCMD.h
 
     src/Include/OS/Linux/CPUFrequencyLimits.h
     src/Include/OS/Linux/CPUScalingAvailableGovernors.h
@@ -71,11 +75,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/CPU/AMD/CPPCCapability1.h
     src/Include/CPU/AMD/CPPCRequest.h
     src/Include/CPU/AMD/PStateCurrentLimit.h
-
-    src/Include/CPU/CPUInfo.h
-
-    src/Include/GPU/GpuInfo.h
-    src/Include/GPU/GPUVendor.h
 
     src/Include/Data/FAN/FanData.h
 
