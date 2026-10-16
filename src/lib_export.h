@@ -16,10 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <QtCompilerDetection>
 
 #ifdef PWT_LIBRARY
-#define LIBPWT_EXPORT Q_DECL_EXPORT
+
+#ifdef _MSC_VER
+#define LIBPWT_EXPORT __declspec(dllexport)
+#elifdef __GNUC__
+#define LIBPWT_EXPORT __attribute__((visibility("default")))
 #else
-#define LIBPWT_EXPORT Q_DECL_IMPORT
+#define LIBPWT_EXPORT
+#endif
+
+#else
+
+#ifdef _MSC_VER
+#define LIBPWT_EXPORT __declspec(dllimport)
+#else
+#define LIBPWT_EXPORT
+#endif
+
 #endif
