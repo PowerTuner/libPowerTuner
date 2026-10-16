@@ -16,28 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] HWPCapabilities final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT HWPCapabilities final {
         int lowestPerf;
         int highestPerf;
-
-        friend QDataStream &operator<<(QDataStream &ds, const HWPCapabilities &data) {
-            ds << data.lowestPerf <<
-                data.highestPerf;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, HWPCapabilities &data) {
-            ds >> data.lowestPerf >>
-                data.highestPerf;
-
-            return ds;
-        }
     };
 }

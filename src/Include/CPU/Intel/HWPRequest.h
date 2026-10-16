@@ -16,11 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
 #include "HWPRequestPkg.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] HWPRequest final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT HWPRequest final {
         HWPRequestPkg requestPkg;
         bool packageControl;
         bool acwValid;
@@ -28,29 +27,5 @@ namespace PWTS::Intel {
         bool desiredValid;
         bool maxValid;
         bool minValid;
-
-        friend QDataStream &operator<<(QDataStream &ds, const HWPRequest &data) {
-            ds << data.requestPkg <<
-                data.packageControl <<
-                data.acwValid <<
-                data.eppValid <<
-                data.desiredValid <<
-                data.maxValid <<
-                data.minValid;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, HWPRequest &data) {
-            ds >> data.requestPkg >>
-                data.packageControl >>
-                data.acwValid >>
-                data.eppValid >>
-                data.desiredValid >>
-                data.maxValid >>
-                data.minValid;
-
-            return ds;
-        }
     };
 }

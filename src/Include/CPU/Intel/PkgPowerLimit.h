@@ -16,13 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] PkgPowerLimit final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT PkgPowerLimit final {
         int pl1;
         int pl2;
         int pl1Time;
@@ -32,33 +29,5 @@ namespace PWTS::Intel {
         bool pl1Enable;
         bool pl2Enable;
         bool lock;
-
-        friend QDataStream &operator<<(QDataStream &ds, const PkgPowerLimit &data) {
-            ds << data.pl1 <<
-                data.pl2 <<
-                data.pl1Time <<
-                data.pl2Time <<
-                data.pl1Clamp <<
-                data.pl2Clamp <<
-                data.pl1Enable <<
-                data.pl2Enable <<
-                data.lock;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, PkgPowerLimit &data) {
-            ds >> data.pl1 >>
-                data.pl2 >>
-                data.pl1Time >>
-                data.pl2Time >>
-                data.pl1Clamp >>
-                data.pl2Clamp >>
-                data.pl1Enable >>
-                data.pl2Enable >>
-                data.lock;
-
-            return ds;
-        }
     };
 }

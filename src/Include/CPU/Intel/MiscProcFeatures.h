@@ -16,28 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] MiscProcFeatures final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT MiscProcFeatures final {
         bool enhancedSpeedStep;
         bool disableTurboMode;
-
-        friend QDataStream &operator<<(QDataStream &ds, const MiscProcFeatures &data) {
-            ds << data.enhancedSpeedStep <<
-                data.disableTurboMode;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, MiscProcFeatures &data) {
-            ds >> data.enhancedSpeedStep >>
-                data.disableTurboMode;
-
-            return ds;
-        }
     };
 }

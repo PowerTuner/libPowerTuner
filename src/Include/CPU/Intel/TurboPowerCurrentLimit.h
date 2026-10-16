@@ -16,34 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] TurboPowerCurrentLimit final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT TurboPowerCurrentLimit final {
         int tdpLimit;
         bool tdpLimitOverride;
         int tdcLimit;
         bool tdcLimitOverride;
-
-        friend QDataStream &operator<<(QDataStream &ds, const TurboPowerCurrentLimit &data) {
-            ds << data.tdpLimit <<
-                data.tdpLimitOverride <<
-                data.tdcLimit <<
-                data.tdcLimitOverride;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, TurboPowerCurrentLimit &data) {
-            ds >> data.tdpLimit >>
-                data.tdpLimitOverride >>
-                data.tdcLimit >>
-                data.tdcLimitOverride;
-
-            return ds;
-        }
     };
 }

@@ -16,13 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] TurboRatioLimit final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT TurboRatioLimit final {
         int maxRatioLimit1C;
         int maxRatioLimit2C;
         int maxRatioLimit3C;
@@ -31,31 +28,5 @@ namespace PWTS::Intel {
         int maxRatioLimit6C;
         int maxRatioLimit7C;
         int maxRatioLimit8C;
-
-        friend QDataStream &operator<<(QDataStream &ds, const TurboRatioLimit &data) {
-            ds << data.maxRatioLimit1C <<
-                data.maxRatioLimit2C <<
-                data.maxRatioLimit3C <<
-                data.maxRatioLimit4C <<
-                data.maxRatioLimit5C <<
-                data.maxRatioLimit6C <<
-                data.maxRatioLimit7C <<
-                data.maxRatioLimit8C;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, TurboRatioLimit &data) {
-            ds >> data.maxRatioLimit1C >>
-                data.maxRatioLimit2C >>
-                data.maxRatioLimit3C >>
-                data.maxRatioLimit4C >>
-                data.maxRatioLimit5C >>
-                data.maxRatioLimit6C >>
-                data.maxRatioLimit7C >>
-                data.maxRatioLimit8C;
-
-            return ds;
-        }
     };
 }

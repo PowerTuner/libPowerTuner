@@ -16,25 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] TemperatureTarget final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT TemperatureTarget final {
         int temperatureTarget;
-
-        friend QDataStream &operator<<(QDataStream &ds, const TemperatureTarget &data) {
-            ds << data.temperatureTarget;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, TemperatureTarget &data) {
-            ds >> data.temperatureTarget;
-
-            return ds;
-        }
     };
 }

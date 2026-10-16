@@ -16,37 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] FIVRControlUV final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT FIVRControl final {
         int cpu;
         int gpu;
         int cpuCache;
         int unslice;
-        int sa;
-
-        friend QDataStream &operator<<(QDataStream &ds, const FIVRControlUV &data) {
-            ds << data.cpu <<
-               data.cpuCache <<
-               data.gpu <<
-               data.unslice <<
-               data.sa;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, FIVRControlUV &data) {
-            ds >> data.cpu >>
-               data.cpuCache >>
-               data.gpu >>
-               data.unslice >>
-               data.sa;
-
-            return ds;
-        }
+        int sysAgent;
     };
 }

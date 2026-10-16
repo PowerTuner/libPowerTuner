@@ -16,37 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] HWPRequestPkg final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT HWPRequestPkg final {
         int min;
         int max;
         int desired;
         int epp;
         int acw;
-
-        friend QDataStream &operator<<(QDataStream &ds, const HWPRequestPkg &data) {
-            ds << data.min <<
-                data.max <<
-                data.desired <<
-                data.epp <<
-                data.acw;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, HWPRequestPkg &data) {
-            ds >> data.min >>
-                data.max >>
-                data.desired >>
-                data.epp >>
-                data.acw;
-
-            return ds;
-        }
     };
 }

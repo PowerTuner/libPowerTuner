@@ -16,13 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-
 #include "../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] PowerCtl final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT PowerCtl final {
         bool bdProcHot;
         bool c1eEnable;
         bool sapmImcC2Policy;
@@ -39,47 +36,5 @@ namespace PWTS::Intel {
         bool ookDisable;
         bool hwpAutonomousDisable;
         bool cstatePrewakeDisable;
-
-        friend QDataStream &operator<<(QDataStream &ds, const PowerCtl &data) {
-            ds << data.bdProcHot <<
-                data.c1eEnable <<
-                data.sapmImcC2Policy <<
-                data.fastBrkSnpEn <<
-                data.powerPerformancePlatformOverride <<
-                data.disableEnergyEfficiencyOpt <<
-                data.disableRaceToHaltOpt <<
-                data.prochotOutputDisable <<
-                data.prochotConfigurableResponseEnable <<
-                data.vrThermAlertDisableLock <<
-                data.vrThermAlertDisable <<
-                data.ringEEDisable <<
-                data.saOptimizationDisable <<
-                data.ookDisable <<
-                data.hwpAutonomousDisable <<
-                data.cstatePrewakeDisable;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, PowerCtl &data) {
-            ds >> data.bdProcHot >>
-                data.c1eEnable >>
-                data.sapmImcC2Policy >>
-                data.fastBrkSnpEn >>
-                data.powerPerformancePlatformOverride >>
-                data.disableEnergyEfficiencyOpt >>
-                data.disableRaceToHaltOpt >>
-                data.prochotOutputDisable >>
-                data.prochotConfigurableResponseEnable >>
-                data.vrThermAlertDisableLock >>
-                data.vrThermAlertDisable >>
-                data.ringEEDisable >>
-                data.saOptimizationDisable >>
-                data.ookDisable >>
-                data.hwpAutonomousDisable >>
-                data.cstatePrewakeDisable;
-
-            return ds;
-        }
     };
 }
