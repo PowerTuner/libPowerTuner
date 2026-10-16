@@ -16,23 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <algorithm>
 
-#include "../../../Types/MinMax.h"
+#include "../../../../lib_export.h"
 
-namespace PWTS::LNX::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] GPUODRanges final { // parsed data from pp_od_clk_voltage
-        MinMax sclk;
-
-        friend QDataStream &operator<<(QDataStream &ds, const GPUODRanges &data) {
-            ds << data.sclk;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, GPUODRanges &data) {
-            ds >> data.sclk;
-
-            return ds;
-        }
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT GPUODRanges final { // parsed data from pp_od_clk_voltage
+        std::ranges::min_max_result<int> sclk;
     };
 }

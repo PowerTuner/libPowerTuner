@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 project(libPowerTuner VERSION 2.0 DESCRIPTION "PowerTuner client and daemon shared library" LANGUAGES CXX)
 
 set(PROJECT_AUTHOR "kylon")
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(OS_SRC "")
@@ -33,28 +33,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Info/CPUInfo.h
     src/Info/GPUInfo.h
 
-    src/DaemonSettings.h
-    src/DaemonSettings.cpp
-    src/Utils.h
-    src/Utils.cpp
-
-    src/Include/Features.h
-
-    src/Include/OS/Linux/CPUFrequencyLimits.h
-    src/Include/OS/Linux/CPUScalingAvailableGovernors.h
-    src/Include/OS/Linux/BlockDeviceQueSched.h
-    src/Include/OS/Linux/MiscPMDevice.h
-    src/Include/OS/Linux/Intel/GPURPSLimits.h
-    src/Include/OS/Linux/AMD/AMDPStateData.h
-    src/Include/OS/Linux/AMD/GPUDPMForcePerfLevel.h
-    src/Include/OS/Linux/AMD/GPUODRanges.h
-
-    src/Include/OS/Windows/PowerScheme.h
-    src/Include/OS/Windows/PowerSchemesData.h
-    src/Include/OS/Windows/PowerSchemeSetting.h
-    src/Include/OS/Windows/PowerSchemeSettingData.h
-    src/Include/OS/Windows/PowerSettingValue.h
-
     src/Include/CPU/Intel/FIVRControl.h
     src/Include/CPU/Intel/HWPCapabilities.h
     src/Include/CPU/Intel/HWPRequest.h
@@ -75,6 +53,22 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/CPU/AMD/CPPCCapability1.h
     src/Include/CPU/AMD/CPPCRequest.h
     src/Include/CPU/AMD/PStateCurrentLimit.h
+
+    src/Include/OS/Linux/CPUFrequencyLimits.h
+    src/Include/OS/Linux/CPUScalingAvailableGovernors.h
+    src/Include/OS/Linux/BlockDeviceQueueScheduler.h
+    src/Include/OS/Linux/MiscPMDevice.h
+    src/Include/OS/Linux/Intel/GPURPSLimits.h
+    src/Include/OS/Linux/AMD/PState.h
+    src/Include/OS/Linux/AMD/GPUDPMForcePerfLevel.h
+    src/Include/OS/Linux/AMD/GPUODRanges.h
+
+    src/DaemonSettings.h
+    src/DaemonSettings.cpp
+    src/Utils.h
+    src/Utils.cpp
+
+    src/Include/Features.h
 
     src/Include/Data/FAN/FanData.h
 

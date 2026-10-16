@@ -16,32 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QDataStream>
-#include <QString>
+#include <string>
 
 #include "../../../lib_export.h"
 
-namespace PWTS::LNX {
-    struct LIBPWT_EXPORT [[nodiscard]] MiscPMDevice final {
-        QString name;
-        QString control;
-        QString controlValue;
-
-        friend QDataStream &operator<<(QDataStream &ds, const MiscPMDevice &data) {
-            ds << data.name <<
-                data.control <<
-                data.controlValue;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, MiscPMDevice &data) {
-            ds >> data.name >>
-                data.control >>
-                data.controlValue;
-
-            return ds;
-        }
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT MiscPMDevice final {
+        std::string name;
+        std::string control;
+        std::string controlValue;
     };
 }

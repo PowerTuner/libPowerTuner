@@ -16,26 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
 #include "../../../../lib_export.h"
 
-namespace PWTS::LNX::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] GPURPSLimits final {
+namespace LIBPWT::Intel::LNX {
+    struct LIBPWT_EXPORT GPURPSLimits final {
         int rp0;
         int rpn;
-
-        friend QDataStream &operator<<(QDataStream &ds, const GPURPSLimits &data) {
-            ds << data.rp0 <<
-                data.rpn;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, GPURPSLimits &data) {
-            ds >> data.rp0 >>
-                data.rpn;
-
-            return ds;
-        }
     };
 }

@@ -16,31 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <algorithm>
 
-#include <QString>
+#include "../../../../lib_export.h"
 
-#include "../../../Types/MinMax.h"
-
-namespace PWTS::LNX::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] GPUDPMForcePerfLevel final {
-        QString level;
-        MinMax sclk;
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT GPUDPMForcePerfLevel final {
+        std::string level;
+        std::ranges::min_max_result<int> sclk;
         bool reset;
-
-        friend QDataStream &operator<<(QDataStream &ds, const GPUDPMForcePerfLevel &data) {
-            ds << data.level <<
-                data.sclk <<
-                data.reset;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, GPUDPMForcePerfLevel &data) {
-            ds >> data.level >>
-                data.sclk >>
-                data.reset;
-
-            return ds;
-        }
     };
 }

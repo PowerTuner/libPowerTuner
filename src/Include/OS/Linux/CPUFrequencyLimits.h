@@ -16,28 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <algorithm>
 
-#include <QList>
+#include "../../../lib_export.h"
 
-#include "../../Types/MinMax.h"
-
-namespace PWTS::LNX {
-    struct LIBPWT_EXPORT [[nodiscard]] CPUFrequencyLimits final {
-        QList<QString> relatedCPUs;
-        MinMax limit;
-
-        friend QDataStream &operator<<(QDataStream &ds, const CPUFrequencyLimits &data) {
-            ds << data.limit <<
-                data.relatedCPUs;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, CPUFrequencyLimits &data) {
-            ds >> data.limit >>
-                data.relatedCPUs;
-
-            return ds;
-        }
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT CPUFrequencyLimits final {
+        std::vector<std::string> relatedCPUs;
+        std::ranges::min_max_result<int> limit;
     };
 }

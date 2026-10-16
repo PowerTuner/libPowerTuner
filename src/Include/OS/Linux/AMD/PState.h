@@ -16,32 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <string>
+#include <vector>
 
-#include <QDataStream>
-#include <QList>
+#include "../../../../lib_export.h"
 
-#include "../../../lib_export.h"
-
-namespace PWTS::LNX {
-    struct LIBPWT_EXPORT [[nodiscard]] BlockDeviceQueSched final {
-        QString name;
-        QList<QString> availableQueueSchedulers;
-        QString scheduler;
-
-        friend QDataStream &operator<<(QDataStream &ds, const BlockDeviceQueSched &data) {
-            ds << data.name <<
-                data.availableQueueSchedulers <<
-                data.scheduler;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, BlockDeviceQueSched &data) {
-            ds >> data.name >>
-                data.availableQueueSchedulers >>
-                data.scheduler;
-
-            return ds;
-        }
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT PState final {//todo partial
+        std::vector<std::string> eppAvailablePrefs;
+        //int highestPerf;
+        //int lowestNonLinearPerf;
+        //int maxFreq;
     };
 }

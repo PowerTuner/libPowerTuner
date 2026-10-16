@@ -16,29 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <string>
+#include <vector>
 
-#include <QList>
-#include <QDataStream>
+#include "../../../lib_export.h"
 
-#include "../../../../lib_export.h"
-
-namespace PWTS::LNX::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] AMDPStateData final {//todo partial
-        QList<QString> eppAvailablePrefs;
-        //int highestPerf;
-        //int lowestNonLinearPerf;
-        //int maxFreq;
-
-        friend QDataStream &operator<<(QDataStream &ds, const AMDPStateData &data) {
-            ds << data.eppAvailablePrefs;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, AMDPStateData &data) {
-            ds >> data.eppAvailablePrefs;
-
-            return ds;
-        }
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT BlockDeviceQueueScheduler final {
+        std::string name;
+        std::vector<std::string> availableSchedulers;
+        std::string scheduler;
     };
 }

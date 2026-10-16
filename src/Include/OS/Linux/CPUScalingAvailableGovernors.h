@@ -16,29 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QList>
-#include <QDataStream>
+#include <vector>
+#include <string>
 
 #include "../../../lib_export.h"
 
-namespace PWTS::LNX {
-    struct LIBPWT_EXPORT [[nodiscard]] CPUScalingAvailableGovernors final {
-        QList<QString> availableGovernors;
-        QList<QString> relatedCPUs;
-
-        friend QDataStream &operator<<(QDataStream &ds, const CPUScalingAvailableGovernors &data) {
-            ds << data.availableGovernors <<
-               data.relatedCPUs;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, CPUScalingAvailableGovernors &data) {
-            ds >> data.availableGovernors >>
-               data.relatedCPUs;
-
-            return ds;
-        }
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT CPUScalingAvailableGovernors final {
+        std::vector<std::string> availableGovernors;
+        std::vector<std::string> relatedCPUs;
     };
 }
