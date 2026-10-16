@@ -72,7 +72,7 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/CPU/AMD/CPPCRequest.h
     src/Include/CPU/AMD/PStateCurrentLimit.h
 
-    src/Include/CPU/CpuInfo.h
+    src/Include/CPU/CPUInfo.h
 
     src/Include/GPU/GpuInfo.h
     src/Include/GPU/GPUVendor.h
