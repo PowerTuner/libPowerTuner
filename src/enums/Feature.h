@@ -25,12 +25,6 @@ namespace LIBPWT {
         CPUFREQ_SYSFS,
     	CPUIDLE_GOV_SYSFS,
 
-		INTEL_GPU_RPS_FREQ_SYSFS,
-		INTEL_GPU_BOOST_SYSFS,
-
-		AMD_GPU_DPM_FORCE_PERF_LEVEL_SYSFS,
-		AMD_GPU_POWER_DPM_STATE_SYSFS,
-
 		// windows
 		WINDOWS_PWR_SCHEME,
 
@@ -70,9 +64,9 @@ namespace LIBPWT {
     	INTEL_PKG_CST_CONFIG_CONTROL_SB,
     	INTEL_PKG_CST_CONFIG_CONTROL_CU1,
     	INTEL_TEMPERATURE_TARGET,
-
 		INTEL_PKG_THERM_STATUS,
 
+        // intel mchbar
     	INTEL_MCHBAR_PKG_RAPL_LIMIT,
 		INTEL_MCHBAR_PKG_RAPL_LIMIT_IVB,
 		INTEL_MCHBAR_PKG_RAPL_LIMIT_TGL,
@@ -80,7 +74,7 @@ namespace LIBPWT {
     	// linux amd
     	AMD_PSTATE_SYSFS,
 
-    	// amd
+    	// ryzenadj
     	AMD_RY_STAPM_LIMIT_W,
 		AMD_RY_STAPM_LIMIT_R,
 		AMD_RY_FAST_LIMIT_W,
@@ -89,6 +83,7 @@ namespace LIBPWT {
 		AMD_RY_SLOW_LIMIT_R,
 		AMD_RY_TCTL_TEMP_W,
 		AMD_RY_TCTL_TEMP_R,
+        AMD_RY_TCTL_TEMP_VAL,
 		AMD_RY_APU_SLOW_W,
 		AMD_RY_APU_SLOW_R,
 		AMD_RY_APU_SKIN_TEMP_W,
@@ -112,13 +107,20 @@ namespace LIBPWT {
 		AMD_RY_CO_ALL_W,
 		AMD_RY_CO_PER_W,
 
-        AMD_RY_TCTL_TEMP_VAL,
-
+        // amd
         AMD_HWPSTATE,
         AMD_CORE_PERFORMANCE_BOOST,
         AMD_CPPC,
 
-    	// FAN
+        // intel gpu
+        INTEL_GPU_RPS_FREQ_SYSFS,
+        INTEL_GPU_BOOST_SYSFS,
+
+        // amd gpu
+        AMD_GPU_DPM_FORCE_PERF_LEVEL_SYSFS,
+        AMD_GPU_POWER_DPM_STATE_SYSFS,
+
+    	// fan
     	FAN_CURVE
     };
 }
