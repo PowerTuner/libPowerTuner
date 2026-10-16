@@ -17,8 +17,8 @@
  */
 #pragma once
 
-namespace PWTS {
-    enum struct CPUVendor: int {
+namespace LIBPWT {
+    enum class CPUVendor: int {
         Unknown,
         Intel,
         AMD
