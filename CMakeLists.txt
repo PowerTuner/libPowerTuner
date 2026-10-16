@@ -22,6 +22,7 @@ add_library(${PROJECT_NAME} SHARED
     src/lib_export.h
     src/enums/Error.h
     src/enums/OSType.h
+    src/enums/CPUVendor.h
     src/enums/Feature.h
     src/enums/LogLevel.h
 
@@ -50,7 +51,7 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/OS/Windows/PowerSchemeSettingData.h
     src/Include/OS/Windows/PowerSettingValue.h
 
-    src/Include/CPU/Intel/FIVRControlUV.h
+    src/Include/CPU/Intel/FIVRControl.h
     src/Include/CPU/Intel/HWPCapabilities.h
     src/Include/CPU/Intel/HWPRequest.h
     src/Include/CPU/Intel/HWPRequestPkg.h
@@ -72,7 +73,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/CPU/AMD/PStateCurrentLimit.h
 
     src/Include/CPU/CpuInfo.h
-    src/Include/CPU/CPUVendor.h
 
     src/Include/GPU/GpuInfo.h
     src/Include/GPU/GPUVendor.h
