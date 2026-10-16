@@ -17,8 +17,8 @@
  */
 #pragma once
 
-namespace PWTS {
-    enum struct OSType: int {
+namespace LIBPWT {
+    enum class OSType: int {
         Unknown,
         Linux,
         Windows

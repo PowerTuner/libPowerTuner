@@ -17,8 +17,8 @@
  */
 #pragma once
 
-namespace PWTS {
-    enum struct LogLevel: unsigned {
+namespace LIBPWT {
+    enum class LogLevel: int {
         Info = 0,
         Warning,
         Error,

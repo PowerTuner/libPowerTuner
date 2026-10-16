@@ -20,20 +20,20 @@ endif ()
 
 add_library(${PROJECT_NAME} SHARED
     src/lib_export.h
+    src/enums/Error.h
+    src/enums/OSType.h
+    src/enums/Feature.h
+    src/enums/LogLevel.h
+
     src/DaemonSettings.h
     src/DaemonSettings.cpp
     src/Utils.h
     src/Utils.cpp
 
-    src/Include/LogLevel.h
-    src/Include/Feature.h
     src/Include/Features.h
     src/Include/SystemInfo.h
     src/Include/DynamicSystemInfo.h
-    src/Include/OSType.h
     src/Include/DaemonCMD.h
-    src/Include/DaemonError.h
-    src/Include/PacketError.h
 
     src/Include/Types/MinMax.h
     src/Include/Types/ROData.h
@@ -116,6 +116,14 @@ else ()
 	target_compile_definitions(${PROJECT_NAME} PRIVATE PWT_LIBRARY)
 endif ()
 
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VERSION ${PROJECT_VERSION}
+    SOVERSION ${PROJECT_VERSION}
+    CXX_VISIBLITY_PRESET hidden
+    VISIBILITY_INLINE_HIDDEN TRUE
+    PREFIX ""
+)
+
 include(CheckIPOSupported)
 check_ipo_supported(RESULT has_ipo OUTPUT ipo_error)
 if (has_ipo)
@@ -126,12 +134,4 @@ endif ()
 include(GNUInstallDirs)
 install(TARGETS ${PROJECT_NAME}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
-
-set_target_properties(${PROJECT_NAME} PROPERTIES
-	VERSION ${PROJECT_VERSION}
-	SOVERSION ${PROJECT_VERSION}
-	CXX_VISIBLITY_PRESET hidden
-	VISIBILITY_INLINE_HIDDEN TRUE
-    PREFIX ""
 )

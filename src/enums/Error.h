@@ -17,16 +17,14 @@
  */
 #pragma once
 
-namespace PWTS {
-    enum struct DError: int {
-    	CORE_DATA_MISMATCH,
+namespace LIBPWT {
+    enum class Error: int {
+        CORE_DATA_MISMATCH,
     	THREAD_DATA_MISMATCH,
     	CORE_IDX_MISMATCH,
         CORRUPTED_DATA,
-    	INVALID_PACKET,
-    	INVALID_DCMD,
     	INVALID_ARGS,
-    	PROFILE_LOAD_FAILED,
+    	PROFILE_LOAD_FAIL,
     	OS_ACCESS_FAIL,
 
 		// linux
@@ -78,7 +76,7 @@ namespace PWTS {
         W_AMDPSTATE_SYSFS,
     	W_AMDPSTATE_EPP_SYSFS,
 
-    	// amd
+    	// ryzenadj
         RY_REFRESH_TABLE,
         W_RY_STAPM_LIMIT,
         W_RY_FAST_LIMIT,
@@ -97,13 +95,18 @@ namespace PWTS {
         W_RY_POWER_PROFILE,
     	W_RY_CO_ALL,
     	W_RY_CO_PER,
+
+        // amd
         W_AMD_CORE_PERFORMANCE_BOOST,
         W_AMD_CPPC_ENBL_BIT,
         W_AMD_CPPC_REQ,
         W_AMD_HWPSTATE_CMD,
 
+        // intel gpu
         W_INTEL_GPU_FREQ,
         W_INTEL_GPU_BOOST,
+
+        // amd gpu
         W_AMD_GPU_DPM_FORCE_PERF_LEVEL,
         W_AMD_GPU_POWER_DPM_STATE,
 
