@@ -16,33 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QString>
-#include <QDataStream>
-#include <QList>
+#include <string>
+#include <vector>
 
 #include "../lib_export.h"
 
-namespace PWTS {
-    struct LIBPWT_EXPORT [[nodiscard]] DynamicSystemInfo final {
-        QString swapMemory;
-        QList<QString> cpuMicrocode;
-        int onlineCPUCount;
-
-        friend QDataStream &operator<<(QDataStream &ds, const DynamicSystemInfo &data) {
-            ds << data.swapMemory <<
-                data.cpuMicrocode <<
-                data.onlineCPUCount;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, DynamicSystemInfo &data) {
-            ds >> data.swapMemory >>
-                data.cpuMicrocode >>
-                data.onlineCPUCount;
-
-            return ds;
-        }
+namespace LIBPWT {
+    struct LIBPWT_EXPORT DynamicSystemInfo final {
+        std::string swapMemory;
+        std::vector<std::string> cpuMicrocode;
     };
 }
