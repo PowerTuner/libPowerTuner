@@ -16,35 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QSet>
-#include <QMap>
-#include <QDataStream>
+#include <unordered_set>
+#include <unordered_map>
 
 #include "../lib_export.h"
-#include "GPU/GPUVendor.h"
-#include "Feature.h"
+#include "../enums/Feature.h"
 
-namespace PWTS {
-    struct LIBPWT_EXPORT [[nodiscard]] Features final {
-        QSet<Feature> cpu;
-        QMap<int, std::pair<GPUVendor, QSet<Feature>>> gpus;
-        QMap<QString, QSet<Feature>> fans;
-
-        friend QDataStream &operator<<(QDataStream &ds, const Features &data) {
-            ds << data.cpu <<
-                data.gpus <<
-                data.fans;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, Features &data) {
-            ds >> data.cpu >>
-                data.gpus >>
-                data.fans;
-
-            return ds;
-        }
+namespace LIBPWT {
+    struct LIBPWT_EXPORT Features final {
+        std::unordered_set<Feature> cpu;
+        std::unordered_map<int, std::unordered_set<Feature>> gpu;
+        std::unordered_map<int, std::unordered_set<Feature>> fan;
     };
 }
