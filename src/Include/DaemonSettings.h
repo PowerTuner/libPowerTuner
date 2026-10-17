@@ -17,13 +17,21 @@
  */
 #pragma once
 #include <string>
-#include <vector>
+#include <cstdint>
 
 #include "../lib_export.h"
+#include "../enums/LogLevel.h"
 
 namespace LIBPWT {
-    struct LIBPWT_EXPORT DynamicSystemInfo final {
-        std::string swapMemory;
-        std::vector<std::string> cpuMicrocode;
+    struct LIBPWT_EXPORT DaemonSettings final {
+        std::string startProfile;
+        std::string batteryProfile;
+        std::string powerSupplyProfile;
+        std::string address = "0.0.0.0";
+        int applyInterval = 0;
+        bool applyOnWakeFromSleep = false;
+        bool ignoreBatteryEvent = false;
+        LogLevel logLvl = LogLevel::Info;
+        uint16_t tcpPort = 56000;
     };
 }

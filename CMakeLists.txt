@@ -20,6 +20,8 @@ endif ()
 
 add_library(${PROJECT_NAME} SHARED
     src/lib_export.h
+    src/Utils.h
+    src/Utils.cpp
 
     src/enums/Error.h
     src/enums/OSType.h
@@ -29,11 +31,11 @@ add_library(${PROJECT_NAME} SHARED
     src/enums/LogLevel.h
 
     src/Info/SystemInfo.h
-    src/Info/DynamicSystemInfo.h
     src/Info/CPUInfo.h
     src/Info/GPUInfo.h
 
     src/Include/Features.h
+    src/Include/DaemonSettings.h
 
     src/Include/CPU/Intel/FIVRControl.h
     src/Include/CPU/Intel/HWPCapabilities.h
@@ -64,11 +66,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Include/OS/Linux/AMD/PState.h
     src/Include/OS/Linux/AMD/GPUDPMForcePerfLevel.h
     src/Include/OS/Linux/AMD/GPUODRanges.h
-
-    src/DaemonSettings.h
-    src/DaemonSettings.cpp
-    src/Utils.h
-    src/Utils.cpp
 
     src/Include/Data/FAN/FanData.h
 
