@@ -33,6 +33,8 @@ add_library(${PROJECT_NAME} SHARED
     src/Info/CPUInfo.h
     src/Info/GPUInfo.h
 
+    src/Include/Features.h
+
     src/Include/CPU/Intel/FIVRControl.h
     src/Include/CPU/Intel/HWPCapabilities.h
     src/Include/CPU/Intel/HWPRequest.h
@@ -68,8 +70,6 @@ add_library(${PROJECT_NAME} SHARED
     src/Utils.h
     src/Utils.cpp
 
-    src/Include/Features.h
-
     src/Include/Data/FAN/FanData.h
 
     src/Include/Packets/DeviceInfoPacket.h
@@ -78,20 +78,18 @@ add_library(${PROJECT_NAME} SHARED
 
     src/Include/Data/OS/Linux/LinuxData.h
     src/Include/Data/OS/Linux/LinuxThreadData.h
-    src/Include/Data/OS/Linux/LinuxAMDData.h
-    src/Include/Data/OS/Linux/LinuxAMDThreadData.h
-    src/Include/Data/OS/Linux/LinuxIntelGPUData.h
-    src/Include/Data/OS/Linux/LinuxAMDGPUData.h
-
-    src/Include/Data/OS/Windows/WindowsData.h
+    src/Include/Data/OS/Linux/AMDData.h
+    src/Include/Data/OS/Linux/AMDThreadData.h
+    src/Include/Data/OS/Linux/IntelGPUData.h
+    src/Include/Data/OS/Linux/AMDGPUData.h
 
     src/Include/Data/Vendor/Intel/IntelData.h
-    src/Include/Data/Vendor/Intel/IntelCoreData.h
-    src/Include/Data/Vendor/Intel/IntelThreadData.h
+    src/Include/Data/Vendor/Intel/CoreData.h
+    src/Include/Data/Vendor/Intel/ThreadData.h
 
     src/Include/Data/Vendor/AMD/AMDData.h
-    src/Include/Data/Vendor/AMD/AMDCoreData.h
-    src/Include/Data/Vendor/AMD/AMDThreadData.h
+    src/Include/Data/Vendor/AMD/CoreData.h
+    src/Include/Data/Vendor/AMD/ThreadData.h
 
     ${OS_SRC}
 )

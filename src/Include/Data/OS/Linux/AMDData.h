@@ -16,29 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include "AMDThreadData.h"
 
-#include "LinuxAMDThreadData.h"
-
-namespace PWTS::LNX::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] LinuxAMDData final {
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT AMDData final {
         // package level
-        RWData<QString> pstateStatus;
+        std::optional<std::string> pstateStatus;
 
         // thread level
-        QList<LinuxAMDThreadData> threadData;
-
-        friend QDataStream &operator<<(QDataStream &ds, const LinuxAMDData &data) {
-            ds << data.pstateStatus <<
-                data.threadData;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, LinuxAMDData &data) {
-            ds >> data.pstateStatus >>
-                data.threadData;
-
-            return ds;
-        }
+        std::vector<AMDThreadData> threadData;
     };
 }

@@ -16,32 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
 
-#include "../../../Types/ROData.h"
-#include "../../../Types/RWData.h"
 #include "../../../OS/Linux/AMD/GPUODRanges.h"
 #include "../../../OS/Linux/AMD/GPUDPMForcePerfLevel.h"
 
-namespace PWTS::LNX {
-    struct LIBPWT_EXPORT [[nodiscard]] LinuxAMDGPUData final {
-        ROData<AMD::GPUODRanges> odRanges;
-        RWData<AMD::GPUDPMForcePerfLevel> dpmForcePerfLevel;
-        RWData<QString> powerDpmState;
-
-        friend QDataStream &operator<<(QDataStream &ds, const LinuxAMDGPUData &data) {
-            ds << data.odRanges <<
-                data.dpmForcePerfLevel <<
-                data.powerDpmState;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, LinuxAMDGPUData &data) {
-            ds >> data.odRanges >>
-                data.dpmForcePerfLevel >>
-                data.powerDpmState;
-
-            return ds;
-        }
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT AMDGPUData final {
+        std::optional<GPUODRanges> odRanges;
+        std::optional<GPUDPMForcePerfLevel> dpmForcePerfLevel;
+        std::optional<std::string> powerDpmState;
     };
 }

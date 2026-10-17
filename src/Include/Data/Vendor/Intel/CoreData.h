@@ -16,26 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
 
-#include <QDataStream>
+#include "../../../CPU/Intel/PkgCstConfigControl.h"
 
-#include "../../../lib_export.h"
-
-namespace PWTS::WIN {
-	struct LIBPWT_EXPORT [[nodiscard]] PowerSettingValue final {
-		int ac = -1;
-		int dc = -1;
-
-		friend QDataStream &operator<<(QDataStream &ds, const PowerSettingValue &data) {
-			ds << data.ac << data.dc;
-
-			return ds;
-		}
-
-		friend QDataStream &operator>>(QDataStream &ds, PowerSettingValue &data) {
-			ds >> data.ac >> data.dc;
-
-			return ds;
-		}
-	};
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT CoreData final {
+        std::optional<PkgCstConfigControl> pkgCstConfigControl;
+    };
 }

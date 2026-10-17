@@ -16,89 +16,36 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QList>
-
-#include "AMDCoreData.h"
-#include "AMDThreadData.h"
+#include "CoreData.h"
+#include "ThreadData.h"
 #include "../../../CPU/AMD/PStateCurrentLimit.h"
 
-namespace PWTS::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] AMDData final {
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT AMDData final {
         // package level
-        ROData<PStateCurrentLimit> pstateCurrentLimit;
-        RWData<int> stapmLimit;
-        RWData<int> fastLimit;
-        RWData<int> slowLimit;
-        RWData<int> tctlTemp;
-        RWData<int> apuSlow;
-        RWData<int> apuSkinTemp;
-        RWData<int> dgpuSkinTemp;
-        RWData<int> curveOptimizer;
-        RWData<int> vrmCurrent;
-        RWData<int> vrmSocCurrent;
-        RWData<int> vrmMaxCurrent;
-        RWData<int> vrmSocMaxCurrent;
-        RWData<int> staticGfxClock;
-        RWData<int> minGfxClock;
-        RWData<int> maxGfxClock;
-        RWData<int> powerProfile;
-        RWData<int> cppcEnableBit;
+        std::optional<PStateCurrentLimit> pstateCurrentLimit;
+        std::optional<int> stapmLimit;
+        std::optional<int> fastLimit;
+        std::optional<int> slowLimit;
+        std::optional<int> tctlTemp;
+        std::optional<int> apuSlow;
+        std::optional<int> apuSkinTemp;
+        std::optional<int> dgpuSkinTemp;
+        std::optional<int> curveOptimizer;
+        std::optional<int> vrmCurrent;
+        std::optional<int> vrmSocCurrent;
+        std::optional<int> vrmMaxCurrent;
+        std::optional<int> vrmSocMaxCurrent;
+        std::optional<int> staticGfxClock;
+        std::optional<int> minGfxClock;
+        std::optional<int> maxGfxClock;
+        std::optional<int> powerProfile;
+        std::optional<int> cppcEnableBit;
 
         // core level
-        QList<AMDCoreData> coreData;
+        std::vector<CoreData> coreData;
 
         // thread level
-        QList<AMDThreadData> threadData;
-
-        friend QDataStream &operator<<(QDataStream &ds, const AMDData &data) {
-            ds << data.pstateCurrentLimit <<
-                data.stapmLimit <<
-                data.fastLimit <<
-                data.slowLimit <<
-                data.tctlTemp <<
-                data.apuSlow <<
-                data.apuSkinTemp <<
-                data.dgpuSkinTemp <<
-                data.curveOptimizer <<
-                data.vrmCurrent <<
-                data.vrmSocCurrent <<
-                data.vrmMaxCurrent <<
-                data.vrmSocMaxCurrent <<
-                data.staticGfxClock <<
-                data.minGfxClock <<
-                data.maxGfxClock <<
-                data.powerProfile <<
-                data.cppcEnableBit <<
-                data.coreData <<
-                data.threadData;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, AMDData &data) {
-            ds >> data.pstateCurrentLimit >>
-                data.stapmLimit >>
-                data.fastLimit >>
-                data.slowLimit >>
-                data.tctlTemp >>
-                data.apuSlow >>
-                data.apuSkinTemp >>
-                data.dgpuSkinTemp >>
-                data.curveOptimizer >>
-                data.vrmCurrent >>
-                data.vrmSocCurrent >>
-                data.vrmMaxCurrent >>
-                data.vrmSocMaxCurrent >>
-                data.staticGfxClock >>
-                data.minGfxClock >>
-                data.maxGfxClock >>
-                data.powerProfile >>
-                data.cppcEnableBit >>
-                data.coreData >>
-                data.threadData;
-
-            return ds;
-        }
+        std::vector<ThreadData> threadData;
     };
 }

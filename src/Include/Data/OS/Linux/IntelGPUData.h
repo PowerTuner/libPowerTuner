@@ -16,26 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
+#include <algorithm>
 
-#include "PowerSettingValue.h"
+#include "../../../OS/Linux/Intel/GPURPSLimits.h"
 
-namespace PWTS::WIN {
-    struct LIBPWT_EXPORT [[nodiscard]] PowerSchemeSetting final {
-        QString groupGuid;
-        PowerSettingValue value;
-
-        friend QDataStream &operator<<(QDataStream &ds, const PowerSchemeSetting &data) {
-            ds << data.groupGuid <<
-                data.value;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, PowerSchemeSetting &data) {
-            ds >> data.groupGuid >>
-                data.value;
-
-            return ds;
-        }
+namespace LIBPWT::Intel::LNX {
+    struct LIBPWT_EXPORT IntelGPUData final {
+        std::optional<GPURPSLimits> rpsLimits;
+        std::optional<std::ranges::min_max_result<int>> frequency;
+        std::optional<int> boostFrequency;
     };
 }

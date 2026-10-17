@@ -16,28 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <vector>
+#include <optional>
 
-#include <QList>
+#include "../../../lib_export.h"
 
-#include "../../Types/RWData.h"
-
-namespace PWTS {
-    struct LIBPWT_EXPORT [[nodiscard]] FanData final {
-        RWData<int> mode;
-        QList<std::pair<int, int>> curve;
-
-		friend QDataStream &operator<<(QDataStream &ds, const FanData &data) {
-		    ds << data.mode <<
-		    	data.curve;
-
-			return ds;
-		}
-
-		friend QDataStream &operator>>(QDataStream &ds, FanData &data) {
-			ds >> data.mode >>
-				data.curve;
-
-			return ds;
-		}
+namespace LIBPWT {
+    struct LIBPWT_EXPORT FanData final {
+        std::optional<int> mode;
+        std::vector<std::pair<int, int>> curve;
     };
 }

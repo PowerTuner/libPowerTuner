@@ -16,52 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QMap>
-
 #include "LinuxThreadData.h"
-#include "LinuxIntelGPUData.h"
-#include "LinuxAMDGPUData.h"
-#include "../../../OS/Linux/BlockDeviceQueSched.h"
+#include "IntelGPUData.h"
+#include "AMDGPUData.h"
+#include "../../../OS/Linux/BlockDeviceQueueScheduler.h"
 #include "../../../OS/Linux/MiscPMDevice.h"
 
-namespace PWTS::LNX {
-    struct LIBPWT_EXPORT [[nodiscard]] LinuxData final {
-        RWData<QString> smtState;
-        ROData<QList<QString>> cpuIdleAvailableGovernors;
-        RWData<QString> cpuIdleGovernor;
-        QMap<QString, BlockDeviceQueSched> blockDevicesQueSched;
-        QList<MiscPMDevice> miscPMDevices;
-        QMap<int, LinuxIntelGPUData> intelGpuData;
-        QMap<int, LinuxAMDGPUData> amdGpuData;
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT LinuxData final {
+        std::optional<std::string> smtState;
+        std::optional<std::vector<std::string>> cpuIdleAvailableGovernors;
+        std::optional<std::string> cpuIdleGovernor;
+        std::unordered_map<std::string, BlockDeviceQueueScheduler> blockDevicesQueSched;
+        std::vector<MiscPMDevice> miscPMDevices;
+        std::unordered_map<int, Intel::LNX::IntelGPUData> intelGpuData;
+        std::unordered_map<int, AMD::LNX::AMDGPUData> amdGpuData;
 
         // thread level
-        QList<LinuxThreadData> threadData;
-
-        friend QDataStream &operator<<(QDataStream &ds, const LinuxData &data) {
-            ds << data.smtState <<
-                data.cpuIdleAvailableGovernors <<
-                data.cpuIdleGovernor <<
-                data.blockDevicesQueSched <<
-                data.miscPMDevices <<
-                data.intelGpuData <<
-                data.amdGpuData <<
-                data.threadData;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, LinuxData &data) {
-            ds >> data.smtState >>
-                data.cpuIdleAvailableGovernors >>
-                data.cpuIdleGovernor >>
-                data.blockDevicesQueSched >>
-                data.miscPMDevices >>
-                data.intelGpuData >>
-                data.amdGpuData >>
-                data.threadData;
-
-            return ds;
-        }
+        std::vector<LinuxThreadData> threadData;
     };
 }

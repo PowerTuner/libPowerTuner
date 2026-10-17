@@ -16,12 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-
-#include <QList>
-
-#include "IntelCoreData.h"
-#include "IntelThreadData.h"
-#include "../../../CPU/Intel/FIVRControlUV.h"
+#include "CoreData.h"
+#include "ThreadData.h"
+#include "../../../CPU/Intel/FIVRControl.h"
 #include "../../../CPU/Intel/HWPRequestPkg.h"
 #include "../../../CPU/Intel/MiscProcFeatures.h"
 #include "../../../CPU/Intel/MiscPwrMgmt.h"
@@ -33,76 +30,30 @@
 #include "../../../CPU/Intel/VRCurrentConfig.h"
 #include "../../../CPU/Intel/MCHBARPkgRaplLimit.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] IntelData final {
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT IntelData final {
         // package level
-        RWData<PkgPowerLimit> pkgPowerLimit;
-        RWData<VRCurrentConfig> vrCurrentCfg;
-        RWData<PP1CurrentConfig> pp1CurrentCfg;
-        RWData<TurboPowerCurrentLimit> turboPowerCurrentLimit;
-        RWData<TurboRatioLimit> turboRatioLimit;
-        RWData<MiscProcFeatures> miscProcFeatures;
-        RWData<PowerCtl> powerCtl;
-        RWData<MiscPwrMgmt> miscPwrMgmt;
-        RWData<HWPRequestPkg> hwpRequestPkg;
-        RWData<FIVRControlUV> undervoltData;
-        RWData<int> pp0Priority;
-        RWData<int> pp1Priority;
-        RWData<int> energyPerfBias;
-        RWData<int> hwpEnable;
-        RWData<int> hwpPkgCtlPolarity;
-        RWData<MCHBARPkgRaplLimit> mchbarPkgRaplLimit;
+        std::optional<PkgPowerLimit> pkgPowerLimit;
+        std::optional<VRCurrentConfig> vrCurrentCfg;
+        std::optional<PP1CurrentConfig> pp1CurrentCfg;
+        std::optional<TurboPowerCurrentLimit> turboPowerCurrentLimit;
+        std::optional<TurboRatioLimit> turboRatioLimit;
+        std::optional<MiscProcFeatures> miscProcFeatures;
+        std::optional<PowerCtl> powerCtl;
+        std::optional<MiscPwrMgmt> miscPwrMgmt;
+        std::optional<HWPRequestPkg> hwpRequestPkg;
+        std::optional<FIVRControl> fivrData;
+        std::optional<int> pp0Priority;
+        std::optional<int> pp1Priority;
+        std::optional<int> energyPerfBias;
+        std::optional<int> hwpEnable;
+        std::optional<int> hwpPkgCtlPolarity;
+        std::optional<MCHBARPkgRaplLimit> mchbarPkgRaplLimit;
 
         // core level
-        QList<IntelCoreData> coreData;
+        std::vector<CoreData> coreData;
 
         // thread level
-        QList<IntelThreadData> threadData;
-
-        friend QDataStream &operator<<(QDataStream &ds, const IntelData &data) {
-            ds << data.pkgPowerLimit <<
-                data.vrCurrentCfg <<
-                data.pp1CurrentCfg <<
-                data.turboPowerCurrentLimit <<
-                data.turboRatioLimit <<
-                data.miscProcFeatures <<
-                data.powerCtl <<
-                data.miscPwrMgmt <<
-                data.hwpRequestPkg <<
-                data.undervoltData <<
-                data.pp0Priority <<
-                data.pp1Priority <<
-                data.energyPerfBias <<
-                data.hwpEnable <<
-                data.hwpPkgCtlPolarity <<
-                data.mchbarPkgRaplLimit <<
-                data.coreData <<
-                data.threadData;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, IntelData &data) {
-            ds >> data.pkgPowerLimit >>
-                data.vrCurrentCfg >>
-                data.pp1CurrentCfg >>
-                data.turboPowerCurrentLimit >>
-                data.turboRatioLimit >>
-                data.miscProcFeatures >>
-                data.powerCtl >>
-                data.miscPwrMgmt >>
-                data.hwpRequestPkg >>
-                data.undervoltData >>
-                data.pp0Priority >>
-                data.pp1Priority >>
-                data.energyPerfBias >>
-                data.hwpEnable >>
-                data.hwpPkgCtlPolarity >>
-                data.mchbarPkgRaplLimit >>
-                data.coreData >>
-                data.threadData;
-
-            return ds;
-        }
+        std::vector<ThreadData> threadData;
     };
 }

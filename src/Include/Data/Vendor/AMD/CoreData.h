@@ -16,29 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
 
-#include "../../../Types/ROData.h"
-#include "../../../Types/RWData.h"
-#include "../../../CPU/Intel/HWPCapabilities.h"
-#include "../../../CPU/Intel/HWPRequest.h"
+#include "../../../../lib_export.h"
 
-namespace PWTS::Intel {
-    struct LIBPWT_EXPORT [[nodiscard]] IntelThreadData final {
-        ROData<HWPCapabilities> hwpCapapabilities;
-        RWData<HWPRequest> hwpRequest;
-
-        friend QDataStream &operator<<(QDataStream &ds, const IntelThreadData &data) {
-            ds << data.hwpCapapabilities <<
-                data.hwpRequest;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, IntelThreadData &data) {
-            ds >> data.hwpCapapabilities >>
-                data.hwpRequest;
-
-            return ds;
-        }
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT CoreData final {
+        std::optional<int> curveOptimizer;
     };
 }

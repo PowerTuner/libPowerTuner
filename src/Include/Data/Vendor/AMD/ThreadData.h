@@ -16,23 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include "../../../CPU/AMD/CPPCCapability1.h"
+#include "../../../CPU/AMD/CPPCRequest.h"
 
-#include "../../../Types/RWData.h"
-
-namespace PWTS::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] AMDCoreData final {
-        RWData<int> curveOptimizer;
-
-        friend QDataStream &operator<<(QDataStream &ds, const AMDCoreData &data) {
-            ds << data.curveOptimizer;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, AMDCoreData &data) {
-            ds >> data.curveOptimizer;
-
-            return ds;
-        }
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT ThreadData final {
+        std::optional<CPPCCapability1> cppcCapability1;
+        std::optional<CPPCRequest> cppcRequest;
+        std::optional<int> corePerfBoost;
+        std::optional<int> pstateCmd;
     };
 }

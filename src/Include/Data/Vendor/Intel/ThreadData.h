@@ -16,28 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
 
-#include "../../../OS/Linux/AMD/AMDPStateData.h"
-#include "../../../Types/ROData.h"
-#include "../../../Types/RWData.h"
+#include "../../../CPU/Intel/HWPCapabilities.h"
+#include "../../../CPU/Intel/HWPRequest.h"
 
-namespace PWTS::LNX::AMD {
-    struct LIBPWT_EXPORT [[nodiscard]] LinuxAMDThreadData final {
-        ROData<AMDPStateData> pstateData;
-        RWData<QString> epp;
-
-        friend QDataStream &operator<<(QDataStream &ds, const LinuxAMDThreadData &data) {
-            ds << data.pstateData <<
-                data.epp;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, LinuxAMDThreadData &data) {
-            ds >> data.pstateData >>
-                data.epp;
-
-            return ds;
-        }
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT ThreadData final {
+        std::optional<HWPCapabilities> hwpCapapabilities;
+        std::optional<HWPRequest> hwpRequest;
     };
 }

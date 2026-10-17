@@ -16,34 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
 
-#include <QMap>
+#include "../../../OS/Linux/AMD/PState.h"
 
-#include "PowerSchemeSetting.h"
-
-namespace PWTS::WIN {
-	struct LIBPWT_EXPORT [[nodiscard]] PowerScheme final {
-		QMap<QString, PowerSchemeSetting> settings;
-		QString friendlyName;
-		bool deleteFlag = false;
-		bool resetFlag = false;
-
-		friend QDataStream &operator<<(QDataStream &ds, const PowerScheme &data) {
-			ds << data.friendlyName <<
-				data.deleteFlag <<
-				data.resetFlag <<
-				data.settings;
-
-			return ds;
-		}
-
-		friend QDataStream &operator>>(QDataStream &ds, PowerScheme &data) {
-			ds >> data.friendlyName >>
-				data.deleteFlag >>
-				data.resetFlag >>
-				data.settings;
-
-			return ds;
-		}
-	};
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT AMDThreadData final {
+        std::optional<PState> pstateData;
+        std::optional<std::string> epp;
+    };
 }
