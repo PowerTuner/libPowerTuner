@@ -16,49 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <string_view>
 
-#include <QIODevice>
-#include <QHostAddress>
-#include <QJsonObject>
+#include "lib_export.h"
+#include "enums/Error.h"
+#include "enums/GPUVendor.h"
 
-#include "Include/DaemonError.h"
-#include "Include/Packets/DeviceInfoPacket.h"
-
-namespace PWTS {
-    [[nodiscard]] LIBPWT_EXPORT bool isValidPort(quint16 port);
-    [[nodiscard]] LIBPWT_EXPORT QByteArray loadFile(const QString &path);
-    [[nodiscard]] LIBPWT_EXPORT bool writeFile(const QString &path, const QByteArray &data);
-    [[nodiscard]] LIBPWT_EXPORT bool isValidProfileForImport(const QString &profile);
-    [[nodiscard]] LIBPWT_EXPORT QString getErrorStr(DError e);
-    [[nodiscard]] LIBPWT_EXPORT QString getPacketErrorStr(PacketError e);
-    [[nodiscard]] LIBPWT_EXPORT QHostAddress getHostAddress(const QString &adr);
-    [[nodiscard]] LIBPWT_EXPORT QString featureToString(Feature feat);
-    [[nodiscard]] LIBPWT_EXPORT QString GPUVendorToString(GPUVendor vnd);
-    [[nodiscard]] LIBPWT_EXPORT QJsonObject getDeviceInfoJson(const DeviceInfoPacket &packet);
-
-    template<class T>
-    [[nodiscard]]
-    bool unpackData(const QByteArray &data, T &out) {
-        if (data.isEmpty())
-            return false;
-
-        QByteArray ba = data;
-        QDataStream ds(&ba, QIODevice::ReadOnly);
-
-        ds.startTransaction();
-        ds >> out;
-
-        return ds.commitTransaction() && ds.status() == QDataStream::Ok;
-    }
-
-    template<class T>
-    [[nodiscard]]
-    bool packData(const T &data, QByteArray &out) {
-        QDataStream ds(&out, QIODevice::WriteOnly);
-
-        ds.startTransaction();
-        ds << data;
-
-        return ds.commitTransaction() && ds.status() == QDataStream::Ok;
-    }
+namespace LIBPWT {
+    [[nodiscard]] LIBPWT_EXPORT std::string_view errorToString(Error e);
+    [[nodiscard]] LIBPWT_EXPORT std::string_view GPUVendorToString(GPUVendor vnd);
 }
