@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <unordered_map>
+
 #include "LinuxThreadData.h"
 #include "IntelGPUData.h"
 #include "AMDGPUData.h"

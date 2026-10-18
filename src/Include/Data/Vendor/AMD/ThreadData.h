@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <optional>
+
 #include "../../../CPU/AMD/CPPCCapability1.h"
 #include "../../../CPU/AMD/CPPCRequest.h"
 

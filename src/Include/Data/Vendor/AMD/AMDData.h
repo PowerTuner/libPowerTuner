@@ -16,6 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#include <vector>
+
 #include "CoreData.h"
 #include "ThreadData.h"
 #include "../../../CPU/AMD/PStateCurrentLimit.h"

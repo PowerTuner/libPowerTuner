@@ -27,25 +27,5 @@ namespace PWTS::WIN {
         bool resetSchemesDefault = false;
         bool replaceDefaultSchemes = false;
         QString activeScheme;
-
-        friend QDataStream &operator<<(QDataStream &ds, const WindowsData &data) {
-            ds << data.schemeOptionsData <<
-                data.schemes <<
-                data.resetSchemesDefault <<
-                data.replaceDefaultSchemes <<
-                data.activeScheme;
-
-            return ds;
-        }
-
-        friend QDataStream &operator>>(QDataStream &ds, WindowsData &data) {
-            ds >> data.schemeOptionsData >>
-                data.schemes >>
-                data.resetSchemesDefault >>
-                data.replaceDefaultSchemes >>
-                data.activeScheme;
-
-            return ds;
-        }
     };
 }
