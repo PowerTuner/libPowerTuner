@@ -20,6 +20,8 @@ endif ()
 
 add_library(${PROJECT_NAME} SHARED
     src/lib_export.h
+    src/Features.h
+    src/DaemonSettings.h
     src/Utils.h
     src/Utils.cpp
 
@@ -34,59 +36,41 @@ add_library(${PROJECT_NAME} SHARED
     src/Info/CPUInfo.h
     src/Info/GPUInfo.h
 
-    src/Include/Features.h
-    src/Include/DaemonSettings.h
+    src/OS/Linux/Includes/BlockDeviceQueueScheduler.h
+    src/OS/Linux/Includes/MiscPMDevice.h
+    src/OS/Linux/Includes/IntelGPU.h
+    src/OS/Linux/Includes/AMDGPU.h
+    src/OS/Linux/SysFs.h
+    src/OS/Linux/CPUSysFs.h
 
-    src/Include/CPU/Intel/FIVRControl.h
-    src/Include/CPU/Intel/HWPCapabilities.h
-    src/Include/CPU/Intel/HWPRequest.h
-    src/Include/CPU/Intel/HWPRequestPkg.h
-    src/Include/CPU/Intel/MiscProcFeatures.h
-    src/Include/CPU/Intel/MiscPwrMgmt.h
-    src/Include/CPU/Intel/PkgPowerLimit.h
-    src/Include/CPU/Intel/PowerCtl.h
-    src/Include/CPU/Intel/PP1CurrentConfig.h
-    src/Include/CPU/Intel/TurboPowerCurrentLimit.h
-    src/Include/CPU/Intel/TurboRatioLimit.h
-    src/Include/CPU/Intel/VRCurrentConfig.h
-    src/Include/CPU/Intel/PkgCstConfigControl.h
-    src/Include/CPU/Intel/TemperatureTarget.h
-    src/Include/CPU/Intel/PkgThermalStatusInfo.h
-    src/Include/CPU/Intel/MCHBARPkgRaplLimit.h
+    src/Vendor/Intel/Include/FIVRControl.h
+    src/Vendor/Intel/Include/HWPCapabilities.h
+    src/Vendor/Intel/Include/HWPRequest.h
+    src/Vendor/Intel/Include/HWPRequestPkg.h
+    src/Vendor/Intel/Include/MiscProcFeatures.h
+    src/Vendor/Intel/Include/MiscPwrMgmt.h
+    src/Vendor/Intel/Include/PkgPowerLimit.h
+    src/Vendor/Intel/Include/PowerCtl.h
+    src/Vendor/Intel/Include/PP1CurrentConfig.h
+    src/Vendor/Intel/Include/TurboPowerCurrentLimit.h
+    src/Vendor/Intel/Include/TurboRatioLimit.h
+    src/Vendor/Intel/Include/VRCurrentConfig.h
+    src/Vendor/Intel/Include/PkgCstConfigControl.h
+    src/Vendor/Intel/Include/TemperatureTarget.h
+    src/Vendor/Intel/Include/PkgThermalStatusInfo.h
+    src/Vendor/Intel/Include/MCHBARPkgRaplLimit.h
+    src/Vendor/Intel/MSR.h
+    src/Vendor/Intel/MSRCore.h
+    src/Vendor/Intel/MSRThread.h
 
-    src/Include/CPU/AMD/CPPCCapability1.h
-    src/Include/CPU/AMD/CPPCRequest.h
-    src/Include/CPU/AMD/PStateCurrentLimit.h
+    src/Vendor/AMD/Include/CPPCCapability1.h
+    src/Vendor/AMD/Include/CPPCRequest.h
+    src/Vendor/AMD/Include/PStateCurrentLimit.h
+    src/Vendor/AMD/MSR.h
+    src/Vendor/AMD/MSRCore.h
+    src/Vendor/AMD/MSRThread.h
 
-    src/Include/OS/Linux/CPUFrequencyLimits.h
-    src/Include/OS/Linux/CPUScalingAvailableGovernors.h
-    src/Include/OS/Linux/BlockDeviceQueueScheduler.h
-    src/Include/OS/Linux/MiscPMDevice.h
-    src/Include/OS/Linux/Intel/GPURPSLimits.h
-    src/Include/OS/Linux/AMD/PState.h
-    src/Include/OS/Linux/AMD/GPUDPMForcePerfLevel.h
-    src/Include/OS/Linux/AMD/GPUODRanges.h
-
-    src/Include/Data/FAN/FanData.h
-
-    src/Include/Packets/DeviceInfoPacket.h
-    src/Include/Packets/ClientPacket.h
-    src/Include/Packets/DaemonPacket.h
-
-    src/Include/Data/OS/Linux/LinuxData.h
-    src/Include/Data/OS/Linux/LinuxThreadData.h
-    src/Include/Data/OS/Linux/AMDData.h
-    src/Include/Data/OS/Linux/AMDThreadData.h
-    src/Include/Data/OS/Linux/IntelGPUData.h
-    src/Include/Data/OS/Linux/AMDGPUData.h
-
-    src/Include/Data/Vendor/Intel/IntelData.h
-    src/Include/Data/Vendor/Intel/CoreData.h
-    src/Include/Data/Vendor/Intel/ThreadData.h
-
-    src/Include/Data/Vendor/AMD/AMDData.h
-    src/Include/Data/Vendor/AMD/CoreData.h
-    src/Include/Data/Vendor/AMD/ThreadData.h
+    src/FAN/Fan.h
 
     ${OS_SRC}
 )
