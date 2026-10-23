@@ -16,23 +16,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include "CoreData.h"
-#include "ThreadData.h"
-#include "../../../CPU/Intel/FIVRControl.h"
-#include "../../../CPU/Intel/HWPRequestPkg.h"
-#include "../../../CPU/Intel/MiscProcFeatures.h"
-#include "../../../CPU/Intel/MiscPwrMgmt.h"
-#include "../../../CPU/Intel/PkgPowerLimit.h"
-#include "../../../CPU/Intel/PowerCtl.h"
-#include "../../../CPU/Intel/PP1CurrentConfig.h"
-#include "../../../CPU/Intel/TurboPowerCurrentLimit.h"
-#include "../../../CPU/Intel/TurboRatioLimit.h"
-#include "../../../CPU/Intel/VRCurrentConfig.h"
-#include "../../../CPU/Intel/MCHBARPkgRaplLimit.h"
+#include <vector>
+
+#include "MSRCore.h"
+#include "MSRThread.h"
+#include "Include/FIVRControl.h"
+#include "Include/HWPRequestPkg.h"
+#include "Include/MiscProcFeatures.h"
+#include "Include/MiscPwrMgmt.h"
+#include "Include/PkgPowerLimit.h"
+#include "Include/PowerCtl.h"
+#include "Include/PP1CurrentConfig.h"
+#include "Include/TurboPowerCurrentLimit.h"
+#include "Include/TurboRatioLimit.h"
+#include "Include/VRCurrentConfig.h"
+#include "Include/MCHBARPkgRaplLimit.h"
 
 namespace LIBPWT::Intel {
-    struct LIBPWT_EXPORT IntelData final {
-        // package level
+    struct LIBPWT_EXPORT MSR final {
+        std::vector<MSRCore> cores;
+        std::vector<MSRThread> threads;
         std::optional<PkgPowerLimit> pkgPowerLimit;
         std::optional<VRCurrentConfig> vrCurrentCfg;
         std::optional<PP1CurrentConfig> pp1CurrentCfg;
@@ -49,11 +52,5 @@ namespace LIBPWT::Intel {
         std::optional<int> hwpEnable;
         std::optional<int> hwpPkgCtlPolarity;
         std::optional<MCHBARPkgRaplLimit> mchbarPkgRaplLimit;
-
-        // core level
-        std::vector<CoreData> coreData;
-
-        // thread level
-        std::vector<ThreadData> threadData;
     };
 }

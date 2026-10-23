@@ -16,13 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <algorithm>
+#include <optional>
 
-#include "../../../lib_export.h"
+#include "../../../../lib_export.h"
 
-namespace LIBPWT::LNX {
-    struct LIBPWT_EXPORT CPUFrequencyLimits final {
-        std::vector<std::string> relatedCPUs;
-        std::ranges::min_max_result<int> limit;
+namespace LIBPWT::Intel::LNX {
+    struct LIBPWT_EXPORT IntelGPU final {
+        std::optional<int> gtMaxFreqMHz;
+        std::optional<int> gtMinFreqMHz;
+        std::optional<int> gtRP0FreqMHz;
+        std::optional<int> gtRPnFreqMHz;
+        std::optional<int> gtBoostFreqMHz;
     };
 }

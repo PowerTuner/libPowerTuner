@@ -16,13 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include "../../../lib_export.h"
+#include <string>
+#include <vector>
 
-namespace LIBPWT::AMD {
-    struct LIBPWT_EXPORT CPPCRequest final {
-        int maxPerf;
-        int minPerf;
-        int desPerf;
-        int epp;
+#include "../../../../lib_export.h"
+
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT BlockDeviceQueueScheduler final {
+        std::string device;
+        std::string prettyName;
+        std::vector<std::string> availableSchedulers;
+        std::string scheduler;
     };
 }

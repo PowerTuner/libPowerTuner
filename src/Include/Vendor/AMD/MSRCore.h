@@ -18,17 +18,10 @@
 #pragma once
 #include <optional>
 
-#include "../../../OS/Linux/CPUScalingAvailableGovernors.h"
-#include "../../../OS/Linux/CPUFrequencyLimits.h"
+#include "../../../lib_export.h"
 
-namespace LIBPWT::LNX {
-    struct LIBPWT_EXPORT LinuxThreadData final {
-        std::optional<CPUScalingAvailableGovernors> scalingAvailableGovernors;
-        std::optional<CPUFrequencyLimits> cpuFrequencyLimits;
-        std::optional<bool> cpuLogicalOffAvailable;
-        std::optional<int> coreID; // the core this thread belongs to
-        std::optional<std::ranges::min_max_result<int>> cpuFrequency;
-        std::optional<std::string> scalingGovernor;
-        std::optional<int> cpuOnlineStatus;
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT MSRCore final {
+        std::optional<int> curveOptimizer;
     };
 }

@@ -16,14 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <algorithm>
+#include <optional>
 
-#include "../../../../lib_export.h"
+#include "Include/CPPCCapability1.h"
+#include "Include/CPPCRequest.h"
 
-namespace LIBPWT::AMD::LNX {
-    struct LIBPWT_EXPORT GPUDPMForcePerfLevel final {
-        std::string level;
-        std::ranges::min_max_result<int> sclk;
-        bool reset;
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT MSRThread final {
+        std::optional<CPPCCapability1> cppcCapability1;
+        std::optional<CPPCRequest> cppcRequest;
+        std::optional<int> corePerfBoost;
+        std::optional<int> pstateCmd;
     };
 }

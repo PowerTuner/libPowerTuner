@@ -16,14 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include "AMDThreadData.h"
+#include <optional>
 
-namespace LIBPWT::AMD::LNX {
-    struct LIBPWT_EXPORT AMDData final {
-        // package level
-        std::optional<std::string> pstateStatus;
+#include "Include/HWPCapabilities.h"
+#include "Include/HWPRequest.h"
 
-        // thread level
-        std::vector<AMDThreadData> threadData;
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT MSRThread final {
+        std::optional<HWPCapabilities> hwpCapapabilities;
+        std::optional<HWPRequest> hwpRequest;
     };
 }

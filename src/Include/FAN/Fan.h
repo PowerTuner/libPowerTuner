@@ -16,14 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <string>
+#include <vector>
+#include <optional>
 
 #include "../../../lib_export.h"
 
-namespace LIBPWT::LNX {
-    struct LIBPWT_EXPORT MiscPMDevice final {
-        std::string name;
-        std::string control;
-        std::string controlValue;
+namespace LIBPWT::FAN {
+    struct LIBPWT_EXPORT Fan final {
+        std::optional<int> mode;
+        std::vector<std::pair<int, int>> curve;
     };
 }

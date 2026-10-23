@@ -16,13 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <optional>
+#include <string>
 
-#include "../../../OS/Linux/AMD/PState.h"
+#include "../../../../lib_export.h"
 
-namespace LIBPWT::AMD::LNX {
-    struct LIBPWT_EXPORT AMDThreadData final {
-        std::optional<PState> pstateData;
-        std::optional<std::string> epp;
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT MiscPMDevice final {
+        std::string name;
+        std::string control;
+        std::string controlValue;
     };
 }

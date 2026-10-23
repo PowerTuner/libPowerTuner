@@ -16,14 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <vector>
-#include <string>
+#include <optional>
 
-#include "../../../lib_export.h"
+#include "Include/PkgCstConfigControl.h"
 
-namespace LIBPWT::LNX {
-    struct LIBPWT_EXPORT CPUScalingAvailableGovernors final {
-        std::vector<std::string> availableGovernors;
-        std::vector<std::string> relatedCPUs;
+namespace LIBPWT::Intel {
+    struct LIBPWT_EXPORT MSRCore final {
+        std::optional<PkgCstConfigControl> pkgCstConfigControl;
     };
 }

@@ -17,7 +17,6 @@
  */
 #pragma once
 #include <string>
-#include <vector>
 
 #include "../lib_export.h"
 #include "../enums/CPUVendor.h"
@@ -41,6 +40,5 @@ namespace LIBPWT {
         std::string l2Cache;
         std::string l3Cache;
         std::string l4Cache;
-        std::vector<std::string> microcode;
     };
 }

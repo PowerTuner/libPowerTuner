@@ -16,15 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <string>
-#include <vector>
+#include <optional>
 
-#include "../../../lib_export.h"
+#include "../../../../lib_export.h"
 
-namespace LIBPWT::LNX {
-    struct LIBPWT_EXPORT BlockDeviceQueueScheduler final {
-        std::string name;
-        std::vector<std::string> availableSchedulers;
-        std::string scheduler;
+namespace LIBPWT::AMD::LNX {
+    struct LIBPWT_EXPORT AMDGPU final {
+        std::optional<int> sclkMaxFreq;
+        std::optional<int> sclkMinFreq;
+        std::optional<std::string> powerDpmForcePerfLevel;
+        bool ppODClkVoltageResetCmd; //todo?
+        std::optional<std::string> powerDpmState;
     };
 }

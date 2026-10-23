@@ -17,14 +17,25 @@
  */
 #pragma once
 #include <optional>
-#include <algorithm>
+#include <vector>
+#include <string>
 
-#include "../../../OS/Linux/Intel/GPURPSLimits.h"
+#include "../../../lib_export.h"
 
-namespace LIBPWT::Intel::LNX {
-    struct LIBPWT_EXPORT IntelGPUData final {
-        std::optional<GPURPSLimits> rpsLimits;
-        std::optional<std::ranges::min_max_result<int>> frequency;
-        std::optional<int> boostFrequency;
+namespace LIBPWT::LNX {
+    struct LIBPWT_EXPORT CPUSysFs final {
+        std::optional<int> microcode;
+        std::optional<bool> online;
+
+        // cpufreq policy
+        std::vector<int> affectedCPUs;
+        std::optional<int> cpuinfoMaxFreq;
+        std::optional<int> cpuinfoMinFreq;
+        std::vector<std::string> scalingAvailableGovernors;
+        std::optional<std::string> scalingGovernor;
+        std::optional<int> scalingMaxFreq;
+        std::optional<int> scalingMinFreq;
+        std::vector<std::string> energyPerformanceAvailablePreferences;
+        std::optional<std::string> energyPerformancePreference;
     };
 }

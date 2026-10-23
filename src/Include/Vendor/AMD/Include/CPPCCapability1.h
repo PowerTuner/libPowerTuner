@@ -16,16 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <optional>
-
-#include "../../../CPU/AMD/CPPCCapability1.h"
-#include "../../../CPU/AMD/CPPCRequest.h"
+#include "../../../lib_export.h"
 
 namespace LIBPWT::AMD {
-    struct LIBPWT_EXPORT ThreadData final {
-        std::optional<CPPCCapability1> cppcCapability1;
-        std::optional<CPPCRequest> cppcRequest;
-        std::optional<int> corePerfBoost;
-        std::optional<int> pstateCmd;
+    struct LIBPWT_EXPORT CPPCCapability1 final {
+        int lowestPerf;
+        int lowNonLinearPerf;
+        int nominalPerf;
+        int highestPerf;
     };
 }

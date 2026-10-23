@@ -18,13 +18,14 @@
 #pragma once
 #include <vector>
 
-#include "CoreData.h"
-#include "ThreadData.h"
-#include "../../../CPU/AMD/PStateCurrentLimit.h"
+#include "MSRCore.h"
+#include "MSRThread.h"
+#include "Include/PStateCurrentLimit.h"
 
 namespace LIBPWT::AMD {
-    struct LIBPWT_EXPORT AMDData final {
-        // package level
+    struct LIBPWT_EXPORT MSR final {
+        std::vector<MSRCore> cores;
+        std::vector<MSRThread> threads;
         std::optional<PStateCurrentLimit> pstateCurrentLimit;
         std::optional<int> stapmLimit;
         std::optional<int> fastLimit;
@@ -43,11 +44,5 @@ namespace LIBPWT::AMD {
         std::optional<int> maxGfxClock;
         std::optional<int> powerProfile;
         std::optional<int> cppcEnableBit;
-
-        // core level
-        std::vector<CoreData> coreData;
-
-        // thread level
-        std::vector<ThreadData> threadData;
     };
 }

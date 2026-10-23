@@ -16,11 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include "../../../../lib_export.h"
+#include "../../../lib_export.h"
 
-namespace LIBPWT::Intel::LNX {
-    struct LIBPWT_EXPORT GPURPSLimits final {
-        int rp0;
-        int rpn;
+namespace LIBPWT::AMD {
+    struct LIBPWT_EXPORT CPPCRequest final {
+        int maxPerf;
+        int minPerf;
+        int desiredPerf;
+        int epp;
     };
 }
