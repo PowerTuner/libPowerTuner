@@ -16,22 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
-#include <string>
-#include <cstdint>
+#include <unordered_set>
+#include <unordered_map>
 
-#include "../lib_export.h"
-#include "../enums/LogLevel.h"
+#include "lib_export.h"
+#include "enums/Feature.h"
 
 namespace LIBPWT {
-    struct LIBPWT_EXPORT DaemonSettings final {
-        std::string startProfile;
-        std::string batteryProfile;
-        std::string powerSupplyProfile;
-        std::string address = "0.0.0.0";
-        int applyInterval = 0;
-        bool applyOnWakeFromSleep = false;
-        bool ignoreBatteryEvent = false;
-        LogLevel logLvl = LogLevel::Info;
-        uint16_t tcpPort = 56000;
+    struct LIBPWT_EXPORT Features final {
+        std::unordered_set<Feature> cpu;
+        std::unordered_map<int, std::unordered_set<Feature>> gpu;
+        std::unordered_map<int, std::unordered_set<Feature>> fan;
     };
 }
