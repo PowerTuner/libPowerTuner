@@ -5,10 +5,8 @@ project(libPowerTuner VERSION 2.0 DESCRIPTION "PowerTuner client and daemon shar
 set(PROJECT_AUTHOR "kylon")
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_AUTOMOC ON)
 set(OS_SRC "")
 
-find_package(Qt6 6 REQUIRED COMPONENTS Core Network)
 
 if (WIN32)
 	configure_file(resources/cmake/windows/win.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/win.rc)
@@ -75,8 +73,6 @@ add_library(${PROJECT_NAME} SHARED
     ${OS_SRC}
 )
 add_library("PWT::Lib" ALIAS ${PROJECT_NAME})
-
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt::Core Qt::Network)
 
 if (WIN32)
 	target_compile_definitions(${PROJECT_NAME} PUBLIC PWT_LIBRARY)
