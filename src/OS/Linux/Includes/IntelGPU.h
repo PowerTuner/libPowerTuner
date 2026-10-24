@@ -18,7 +18,7 @@
 #pragma once
 #include <optional>
 
-#include "../../../../lib_export.h"
+#include "../../../lib_export.h"
 
 namespace LIBPWT::Intel::LNX {
     struct LIBPWT_EXPORT IntelGPU final {

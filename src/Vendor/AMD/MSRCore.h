@@ -18,7 +18,7 @@
 #pragma once
 #include <optional>
 
-#include "../../../lib_export.h"
+#include "../../lib_export.h"
 
 namespace LIBPWT::AMD {
     struct LIBPWT_EXPORT MSRCore final {

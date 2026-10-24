@@ -18,7 +18,7 @@
 #pragma once
 #include <string>
 
-#include "../../../../lib_export.h"
+#include "../../../lib_export.h"
 
 namespace LIBPWT::LNX {
     struct LIBPWT_EXPORT MiscPMDevice final {
