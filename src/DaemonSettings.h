@@ -32,6 +32,6 @@ namespace LIBPWT {
         bool applyOnWakeFromSleep = false;
         bool ignoreBatteryEvent = false;
         LogLevel logLvl = LogLevel::Info;
-        uint16_t tcpPort = 56000;
+        uint16_t port = 56000;
     };
 }
