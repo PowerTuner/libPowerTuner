@@ -19,11 +19,9 @@
 #include <string>
 
 #include "../lib_export.h"
-#include "../enums/OSType.h"
 
 namespace LIBPWT {
     struct LIBPWT_EXPORT SystemInfo final {
-        OSType osType;
         std::string distribution;
         std::string kernel;
         std::string arch;

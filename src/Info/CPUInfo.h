@@ -19,11 +19,9 @@
 #include <string>
 
 #include "../lib_export.h"
-#include "../enums/CPUVendor.h"
 
 namespace LIBPWT {
     struct LIBPWT_EXPORT CPUInfo final {
-        CPUVendor vendor;
         std::string brand;
         std::string codename;
         std::string techNode;

@@ -20,6 +20,7 @@ add_library(${PROJECT_NAME} SHARED
     src/lib_export.h
     src/Features.h
     src/DaemonSettings.h
+    src/DeviceData.h
     src/Utils.h
     src/Utils.cpp
 
@@ -33,6 +34,7 @@ add_library(${PROJECT_NAME} SHARED
     src/Info/SystemInfo.h
     src/Info/CPUInfo.h
     src/Info/GPUInfo.h
+    src/Info/DaemonInfo.h
 
     src/OS/Linux/Includes/BlockDeviceQueueScheduler.h
     src/OS/Linux/Includes/MiscPMDevice.h
