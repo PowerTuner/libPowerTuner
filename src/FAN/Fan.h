@@ -19,10 +19,11 @@
 #include <vector>
 #include <optional>
 
-#include "../../../lib_export.h"
+#include "../lib_export.h"
 
 namespace LIBPWT::FAN {
     struct LIBPWT_EXPORT Fan final {
+        int index;
         std::optional<int> mode;
         std::vector<std::pair<int, int>> curve;
     };
