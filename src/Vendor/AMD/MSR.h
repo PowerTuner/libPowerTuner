@@ -27,6 +27,9 @@ namespace LIBPWT::AMD {
         std::vector<MSRCore> cores;
         std::vector<MSRThread> threads;
         std::optional<PStateCurrentLimit> pstateCurrentLimit;
+        std::optional<int> cppcEnableBit;
+
+        // ryzenadj
         std::optional<int> stapmLimit;
         std::optional<int> fastLimit;
         std::optional<int> slowLimit;
@@ -43,6 +46,5 @@ namespace LIBPWT::AMD {
         std::optional<int> minGfxClock;
         std::optional<int> maxGfxClock;
         std::optional<int> powerProfile;
-        std::optional<int> cppcEnableBit;
     };
 }

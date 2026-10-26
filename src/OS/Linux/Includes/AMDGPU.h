@@ -25,7 +25,6 @@ namespace LIBPWT::AMD::LNX {
         std::optional<int> sclkMaxFreq;
         std::optional<int> sclkMinFreq;
         std::optional<std::string> powerDpmForcePerfLevel;
-        bool ppODClkVoltageResetCmd; //todo?
         std::optional<std::string> powerDpmState;
     };
 }

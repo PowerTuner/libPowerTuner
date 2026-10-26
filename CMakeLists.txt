@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(OS_SRC "")
 
+set(YAML_BUILD_SHARED_LIBS OFF)
+add_subdirectory(src/extern/yaml-cpp EXCLUDE_FROM_ALL)
 
 if (WIN32)
 	configure_file(resources/cmake/windows/win.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/win.rc)
@@ -21,8 +23,11 @@ add_library(${PROJECT_NAME} SHARED
     src/Features.h
     src/DaemonSettings.h
     src/DeviceData.h
+    src/YamlKeys.h
     src/Utils.h
     src/Utils.cpp
+    src/Serialize.h
+    src/Serialize.cpp
 
     src/enums/Error.h
     src/enums/OSType.h
@@ -75,6 +80,7 @@ add_library(${PROJECT_NAME} SHARED
     ${OS_SRC}
 )
 add_library("PWT::Lib" ALIAS ${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} PRIVATE yaml-cpp::yaml-cpp)
 
 if (WIN32)
 	target_compile_definitions(${PROJECT_NAME} PUBLIC PWT_LIBRARY)
