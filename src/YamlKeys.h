@@ -25,6 +25,8 @@ namespace LIBPWT::YKeys {
     static constexpr char versionMinor[] = "version_minor";
     static constexpr char dataPath[] = "data_path";
     static constexpr char settings[] = "settings";
+    static constexpr char features[] = "features";
+    static constexpr char fan[] = "fan";
     static constexpr char startProfile[] = "start_profile";
     static constexpr char batteryProfile[] = "battery_profile";
     static constexpr char psupplyProfile[] = "power_supply_profile";

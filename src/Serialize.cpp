@@ -35,12 +35,59 @@ namespace LIBPWT {
         return out;
     }
 
+    static YAML::Emitter &operator<<(YAML::Emitter &out, const Features &v) {
+        out << YAML::BeginMap;
+
+        if (!v.cpu.empty()) {
+            out << YAML::Key << YKeys::cpu << YAML::Value << YAML::BeginSeq;
+
+            for (const Feature &feature: v.cpu)
+                out << static_cast<int>(feature);
+
+            out << YAML::EndSeq;
+        }
+
+        if (!v.gpu.empty()) {
+            out << YAML::Key << YKeys::gpu << YAML::Value << YAML::BeginMap;
+
+            for (const auto &[index, features]: v.gpu) {
+                out << YAML::Key << index << YAML::Value << YAML::BeginSeq;
+
+                for (const Feature &f: features)
+                    out << static_cast<int>(f);
+
+                out << YAML::EndSeq;
+            }
+
+            out << YAML::EndMap;
+        }
+
+        if (!v.fan.empty()) {
+            out << YAML::Key << YKeys::fan << YAML::Value << YAML::BeginMap;
+
+            for (const auto &[index, features]: v.fan) {
+                out << YAML::Key << index << YAML::Value << YAML::BeginSeq;
+
+                for (const Feature &f: features)
+                    out << static_cast<int>(f);
+
+                out << YAML::EndSeq;
+            }
+
+            out << YAML::EndMap;
+        }
+
+        out << YAML::EndMap;
+        return out;
+    }
+
     static YAML::Emitter &operator<<(YAML::Emitter &out, const std::optional<DaemonInfo> &v) {
         out << YAML::BeginMap
             << YAML::Key << YKeys::versionMajor << YAML::Value << v->versionMajor
             << YAML::Key << YKeys::versionMinor << YAML::Value << v->versionMinor
             << YAML::Key << YKeys::dataPath << YAML::Value << v->dataPath
             << YAML::Key << YKeys::settings << YAML::Value << v->settings
+            << YAML::Key << YKeys::features << YAML::Value << v->features
             << YAML::EndMap;
         return out;
     }
