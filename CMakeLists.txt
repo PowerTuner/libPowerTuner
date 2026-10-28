@@ -12,10 +12,7 @@ add_subdirectory(src/extern/yaml-cpp EXCLUDE_FROM_ALL)
 
 if (WIN32)
 	configure_file(resources/cmake/windows/win.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/win.rc)
-
-	list(APPEND OS_SRC
-		win.rc
-	)
+	list(APPEND OS_SRC win.rc)
 endif ()
 
 add_library(${PROJECT_NAME} SHARED
@@ -48,6 +45,8 @@ add_library(${PROJECT_NAME} SHARED
     src/OS/Linux/Includes/AMDGPU.h
     src/OS/Linux/SysFs.h
     src/OS/Linux/CPUSysFs.h
+
+    src/OS/Windows/Registry.h
 
     src/Vendor/Intel/Include/FIVRControl.h
     src/Vendor/Intel/Include/HWPCapabilities.h
