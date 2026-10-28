@@ -30,8 +30,8 @@
 
 namespace LIBPWT {
     struct LIBPWT_EXPORT DeviceData final {
-        OSType os;
-        CPUVendor cpu;
+        OSType os = OSType::Unknown;
+        CPUVendor cpu = CPUVendor::Unknown;
         std::optional<DaemonInfo> daemonInfo;
         std::optional<SystemInfo> systemInfo;
         std::optional<CPUInfo> cpuInfo;

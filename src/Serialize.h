@@ -20,4 +20,5 @@
 
 namespace LIBPWT {
     [[nodiscard]] LIBPWT_EXPORT std::string serializeData(const DeviceData &data);
+    [[nodiscard]] LIBPWT_EXPORT DeviceData deserializeData(const std::string &yaml);
 }

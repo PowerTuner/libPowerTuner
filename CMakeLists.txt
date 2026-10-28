@@ -28,6 +28,7 @@ add_library(${PROJECT_NAME} SHARED
     src/Utils.cpp
     src/Serialize.h
     src/Serialize.cpp
+    src/Deserialize.cpp
 
     src/enums/Error.h
     src/enums/OSType.h
