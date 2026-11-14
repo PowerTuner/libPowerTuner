@@ -130,32 +130,58 @@ namespace LIBPWT {
             // ryzenadj
             case Error::RY_REFRESH_TABLE:
                 return "Failed to refresh RyzenAdj table, values may be old"sv;
+            case Error::R_RY_STAPM_LIMIT:
+                return "RyzenAdj: unable to read stapm limit"sv;
             case Error::W_RY_STAPM_LIMIT:
                 return "RyzenAdj: unable to write stapm limit"sv;
+            case Error::R_RY_FAST_LIMIT:
+                return "RyzenAdj: unable to read fast limit"sv;
             case Error::W_RY_FAST_LIMIT:
                 return "RyzenAdj: unable to write fast limit"sv;
+            case Error::R_RY_SLOW_LIMIT:
+                return "RyzenAdj: unable to read slow limit"sv;
             case Error::W_RY_SLOW_LIMIT:
                 return "RyzenAdj: unable to write slow limit"sv;
+            case Error::R_RY_TCTL_TEMP:
+                return "RyzenAdj: unable to read tctl temp"sv;
             case Error::W_RY_TCTL_TEMP:
                 return "RyzenAdj: unable to write tctl temp"sv;
+            case Error::R_RY_APU_SLOW:
+                return "RyzenAdj: unable to read apu slow limit"sv;
             case Error::W_RY_APU_SLOW:
                 return "RyzenAdj: unable to write apu slow limit"sv;
+            case Error::R_RY_APU_SKIN_TEMP:
+                return "RyzenAdj: unable to read apu skin temperature limit"sv;
             case Error::W_RY_APU_SKIN_TEMP:
                 return "RyzenAdj: unable to write apu skin temperature limit"sv;
+            case Error::R_RY_DGPU_SKIN_TEMP:
+                return "RyzenAdj: unable to read dgpu skin temperature limit"sv;
             case Error::W_RY_DGPU_SKIN_TEMP:
                 return "RyzenAdj: unable to write dgpu skin temperature limit"sv;
+            case Error::R_RY_VRM_CURRENT:
+                return "RyzenAdj: unable to read vrm current"sv;
             case Error::W_RY_VRM_CURRENT:
                 return "RyzenAdj: unable to write vrm current"sv;
+            case Error::R_RY_VRM_SOC_CURRENT:
+                return "RyzenAdj: unable to read vrm soc current"sv;
             case Error::W_RY_VRM_SOC_CURRENT:
                 return "RyzenAdj: unable to write vrm soc current"sv;
+            case Error::R_RY_VRM_MAX_CURRENT:
+                return "RyzenAdj: unable to read vrm max current"sv;
             case Error::W_RY_VRM_MAX_CURRENT:
                 return "RyzenAdj: unable to write vrm max current"sv;
+            case Error::R_RY_VRM_SOC_MAX_CURRENT:
+                return "RyzenAdj: unable to read vrm soc max current"sv;
             case Error::W_RY_VRM_SOC_MAX_CURRENT:
                 return "RyzenAdj: unable to write vrm soc max current"sv;
             case Error::W_RY_STATIC_GFX_CLOCK:
                 return "RyzenAdj: unable to write static gpu clock"sv;
+            case Error::R_RY_MIN_GFX_CLOCK:
+                return "RyzenAdj: unable to read minimum gpu clock"sv;
             case Error::W_RY_MIN_GFX_CLOCK:
                 return "RyzenAdj: unable to set minimum gpu clock"sv;
+            case Error::R_RY_MAX_GFX_CLOCK:
+                return "RyzenAdj: unable to read maximum gpu clock"sv;
             case Error::W_RY_MAX_GFX_CLOCK:
                 return "RyzenAdj: unable to set maximum gpu clock"sv;
             case Error::W_RY_POWER_PROFILE:
