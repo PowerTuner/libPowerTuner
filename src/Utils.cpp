@@ -192,12 +192,22 @@ namespace LIBPWT {
                 return "RyzenAdj: unable to set core curve optimizer"sv;
 
             // amd
+            case Error::R_AMD_CPPC_CAP1:
+                return "Unable to read CPPC capability 1 register"sv;
+            case Error::R_AMD_HWPSTATE_CMD:
+                return "Unable to read P-State control register"sv;
             case Error::W_AMD_HWPSTATE_CMD:
                 return "Unable to write P-State control register"sv;
+            case Error::R_AMD_CORE_PERFORMANCE_BOOST:
+                return "Unable to read core performance boost register"sv;
             case Error::W_AMD_CORE_PERFORMANCE_BOOST:
                 return "Unable to write core performance boost register"sv;
+            case Error::R_AMD_CPPC_ENBL_BIT:
+                return "Unable to read CPPC enable register"sv;
             case Error::W_AMD_CPPC_ENBL_BIT:
                 return "Unable to write CPPC enable register"sv;
+            case Error::R_AMD_CPPC_REQ:
+                return "Unable to read CPPC request register"sv;
             case Error::W_AMD_CPPC_REQ:
                 return "Unable to write CPPC request register"sv;
 

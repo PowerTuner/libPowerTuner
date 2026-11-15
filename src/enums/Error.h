@@ -110,9 +110,14 @@ namespace LIBPWT {
         W_RY_CO_PER,
 
         // amd
+        R_AMD_CPPC_CAP1,
+        R_AMD_CORE_PERFORMANCE_BOOST,
         W_AMD_CORE_PERFORMANCE_BOOST,
+        R_AMD_CPPC_ENBL_BIT,
         W_AMD_CPPC_ENBL_BIT,
+        R_AMD_CPPC_REQ,
         W_AMD_CPPC_REQ,
+        R_AMD_HWPSTATE_CMD,
         W_AMD_HWPSTATE_CMD,
 
         // intel gpu
