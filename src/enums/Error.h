@@ -119,6 +119,7 @@ namespace LIBPWT {
         W_AMD_CPPC_REQ,
         R_AMD_HWPSTATE_CMD,
         W_AMD_HWPSTATE_CMD,
+        R_AMD_PSTATE_CUR_LIMIT,
 
         // intel gpu
         W_INTEL_GPU_FREQ,

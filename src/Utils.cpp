@@ -210,6 +210,8 @@ namespace LIBPWT {
                 return "Unable to read CPPC request register"sv;
             case Error::W_AMD_CPPC_REQ:
                 return "Unable to write CPPC request register"sv;
+            case Error::R_AMD_PSTATE_CUR_LIMIT:
+                return "Unable to read PState current limit register"sv;
 
             // intel gpu
             case Error::W_INTEL_GPU_FREQ:
