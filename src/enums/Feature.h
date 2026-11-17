@@ -50,6 +50,7 @@ namespace LIBPWT {
         INTEL_POWER_CTL_CU1,
         INTEL_MISC_PWR_MGMT,
         INTEL_MISC_PWR_MGMT_NHLM,
+        INTEL_HWP,
         INTEL_HWP_REQ_PKG,
         INTEL_HWP_EPP,
         INTEL_HWP_ACT_WIND,
