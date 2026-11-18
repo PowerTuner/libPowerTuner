@@ -77,9 +77,9 @@ namespace LIBPWT {
             case Error::W_PKG_POWER_LIMIT:
                 return "Unable to write power limit register"sv;
             case Error::R_POWER_LIMIT_MCHBAR:
-                return "Unable to read MCHBAR register"sv;
+                return "Unable to read MCHBAR power limit register"sv;
             case Error::W_POWER_LIMIT_MCHBAR:
-                return "Unable to write MCHBAR register"sv;
+                return "Unable to write MCHBAR power limit register"sv;
             case Error::W_VR_CURRENT_CFG:
                 return "Unable to write VR current config register"sv;
             case Error::W_PP1_CURRENT_CFG:
