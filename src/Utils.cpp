@@ -76,38 +76,70 @@ namespace LIBPWT {
             // intel
             case Error::W_PKG_POWER_LIMIT:
                 return "Unable to write power limit register"sv;
-            case Error::R_POWER_LIMIT_MCHBAR:
-                return "Unable to read MCHBAR power limit register"sv;
+            case Error::R_PKG_POWER_LIMIT:
+                return "Unable to read power limit register"sv;
             case Error::W_POWER_LIMIT_MCHBAR:
                 return "Unable to write MCHBAR power limit register"sv;
+            case Error::R_POWER_LIMIT_MCHBAR:
+                return "Unable to read MCHBAR power limit register"sv;
             case Error::W_VR_CURRENT_CFG:
                 return "Unable to write VR current config register"sv;
+            case Error::R_VR_CURRENT_CFG:
+                return "Unable to read VR current config register"sv;
             case Error::W_PP1_CURRENT_CFG:
                 return "Unable to write PP1 current config register"sv;
+            case Error::R_PP1_CURRENT_CFG:
+                return "Unable to read PP1 current config register"sv;
             case Error::W_TURBO_POWER_CURRENT_LIMIT:
                 return "Unable to write turbo current power limit register"sv;
+            case Error::R_TURBO_POWER_CURRENT_LIMIT:
+                return "Unable to read turbo current power limit register"sv;
             case Error::W_CPU_BLNC:
                 return "Unable to write CPU power balance register"sv;
+            case Error::R_CPU_BLNC:
+                return "Unable to read CPU power balance register"sv;
             case Error::W_GPU_BLNC:
                 return "Unable to write GPU power balance register"sv;
+            case Error::R_GPU_BLNC:
+                return "Unable to read GPU power balance register"sv;
             case Error::W_ENERGY_PERF_BIAS:
                 return "Unable to write power policy preference register"sv;
+            case Error::R_ENERGY_PERF_BIAS:
+                return "Unable to read power policy preference register"sv;
             case Error::W_TURBO_RATIO_LIMIT:
                 return "Unable to write turbo ratio limit register"sv;
+            case Error::R_TURBO_RATIO_LIMIT:
+                return "Unable to read turbo ratio limit register"sv;
             case Error::W_MISC_PROC_FEATURES:
                 return "Unable to write misc processor features register"sv;
+            case Error::R_MISC_PROC_FEATURES:
+                return "Unable to read misc processor features register"sv;
             case Error::W_POWER_CTL:
                 return "Unable to write power ctl register"sv;
+            case Error::R_POWER_CTL:
+                return "Unable to read power ctl register"sv;
             case Error::W_MISC_PWR_MGMT:
                 return "Unable to write misc power management register"sv;
+            case Error::R_MISC_PWR_MGMT:
+                return "Unable to read misc power management register"sv;
+            case Error::R_HWP_CAPABILITIES:
+                return "Unable to write HWP capabilities register"sv;
             case Error::W_HWP_ENABLE:
                 return "Unable to write HWP enable register"sv;
+            case Error::R_HWP_ENABLE:
+                return "Unable to read HWP enable register"sv;
             case Error::W_HWP_REQ_PKG:
                 return "Unable to write HWP request pkg register"sv;
+            case Error::R_HWP_REQ_PKG:
+                return "Unable to read HWP request pkg register"sv;
             case Error::W_HWP_REQ:
                 return "Unable to write HWP request register"sv;
+            case Error::R_HWP_REQ:
+                return "Unable to read HWP request register"sv;
             case Error::W_HWP_CTL:
-                return "Unabel to write HWP CTL register"sv;
+                return "Unable to write HWP CTL register"sv;
+            case Error::R_HWP_CTL:
+                return "Unable to read HWP CTL register"sv;
             case Error::W_CPU_UV:
                 return "Unable to write CPU voltage register"sv;
             case Error::W_GPU_UV:
@@ -120,6 +152,8 @@ namespace LIBPWT {
                 return "Unable to write sys-agent voltage register"sv;
             case Error::W_PKG_CST_CONFIG_CONTROL:
                 return "Unable to write C-State configuration control register"sv;
+            case Error::R_PKG_CST_CONFIG_CONTROL:
+                return "Unable to read C-State configuration control register"sv;
 
             // amd linux
             case Error::W_AMDPSTATE_SYSFS:
