@@ -145,6 +145,7 @@ struct YAML::convert<LIBPWT::SystemInfo> {
         const Node &manufacturerN = node[LIBPWT::YKeys::manufacturer];
         const Node &availableRamN = node[LIBPWT::YKeys::availableRam];
         const Node &swapMemoryN = node[LIBPWT::YKeys::swapMemory];
+        const Node &coreIDsN = node[LIBPWT::YKeys::coreIDs];
 
         if (distributionN && distributionN.IsScalar())
             v.distribution = distributionN.as<std::string>();
@@ -178,6 +179,9 @@ struct YAML::convert<LIBPWT::SystemInfo> {
 
         if (swapMemoryN && swapMemoryN.IsScalar())
             v.swapMemory = swapMemoryN.as<std::string>();
+
+        if (coreIDsN && coreIDsN.IsSequence())
+            v.coreIDs = coreIDsN.as<std::vector<int>>();
 
         return true;
     }

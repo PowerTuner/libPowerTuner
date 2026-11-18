@@ -17,6 +17,7 @@
  */
 #pragma once
 #include <string>
+#include <vector>
 
 #include "../lib_export.h"
 
@@ -33,5 +34,6 @@ namespace LIBPWT {
         std::string manufacturer;
         std::string availableRam;
         std::string swapMemory;
+        std::vector<int> coreIDs;
     };
 }

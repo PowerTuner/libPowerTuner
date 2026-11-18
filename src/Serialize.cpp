@@ -105,6 +105,7 @@ namespace LIBPWT {
             << YAML::Key << YKeys::manufacturer << YAML::Value << v->manufacturer
             << YAML::Key << YKeys::availableRam << YAML::Value << v->availableRam
             << YAML::Key << YKeys::swapMemory << YAML::Value << v->swapMemory
+            << YAML::Key << YKeys::coreIDs << YAML::Value << v->coreIDs
             << YAML::EndMap;
         return out;
     }

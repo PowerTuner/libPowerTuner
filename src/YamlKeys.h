@@ -48,6 +48,7 @@ namespace LIBPWT::YKeys {
     static constexpr char manufacturer[] = "manufacturer";
     static constexpr char availableRam[] = "available_ram";
     static constexpr char swapMemory[] = "swap_memory";
+    static constexpr char coreIDs[] = "core_ids";
     static constexpr char cpuInfo[] = "cpu_info";
     static constexpr char brand[] = "brand";
     static constexpr char codename[] = "codename";
